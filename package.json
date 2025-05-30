@@ -8,15 +8,15 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/lordhidalgo/gameconnect4.0.git"
+    "url": "https://github.com/lordhidalgo/proyectointegrador1.1.git"
   },
   "author": {
-    "name": "lordhidalgo<mario.hidalgo>",
-    "email": "larcillahidalgo@gmail.com",
-    "url": "https://github.com/lordhidalgo/gameconnect4.0.git"
+    "name": "zexarcore<Julio C. Cortes C.>",
+    "email": "zexarcore@protonmail.com",
+    "url": "https://github.com/lordhidalgo/proyectointegrador1.1.git"
   },
   "license": "BSD 3-Clause",
-  "homepage": "https://github.com/lordhidalgo/gameconnect4.0.git",
+  "homepage": "https://github.com/lordhidalgo/proyectointegrador1.1.git",
   "type": "module",
   "engines": {
     "node": ">=20",
