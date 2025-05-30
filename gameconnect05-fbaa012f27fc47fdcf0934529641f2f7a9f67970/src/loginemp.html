@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion.</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(270deg, #353533, #a3babd, #ffffff);
+            background-size: 800% 800%;
+            animation: gradientAnimation 15s ease infinite;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .logo {
+            position: absolute;
+            top: 55px;
+            left: 48%;
+        }
+
+        .login-form {
+            background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+            padding: 20px 30px;
+            border-radius: 5px;
+            border-top: #ff5722 3px solid;
+            color: white;
+            box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+            width: 400px;
+            height: 340px;
+            margin: auto;
+            margin-top: 180px;
+        }
+
+        .login-form h5 {
+            margin: 0;
+            text-align: center;
+            height: 40px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid;
+            font-size: 20px;
+        }
+
+        .controls {
+            width: 100%;
+            padding: 11px 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            background: #252323;
+            font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+
+        .controls::placeholder {
+            color: #aaa; /* Color del placeholder */
+            font-size: 14px; /* Tamaño de la fuente del placeholder */
+        }
+
+        .buttons {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff5722;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons:hover {
+            background-color: white;
+            color: #ff5722;
+        }
+
+        .login-form p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            border-bottom: 1px solid;
+        }
+
+        .login-form a {
+            color: #a3babd;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+
+        .Registrate {
+            position: absolute;
+            top: 76%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="/imagenes/logo-2078018_1280.png" width="60" height="60" alt="logo de la marca">
+    </div>
+
+    <section class="login-form">
+        <h5>Inicia sesion.</h5>
+        <input class="controls" type="text" placeholder="Usuario" id="username" required>
+        <input class="controls" type="password" placeholder="Contraseña" id="password" required>
+        <a href="/src/indexempleado.html"><input class="buttons" type="submit" value="Iniciar sesion" id="loginButton"></a>
+        <p><a href="#">¿olvidaste tu contraseña?</a></p>
+    </section>
+    <div class="Registrate">
+        <p style="text-align: center; color: white;">¿No tienes cuenta? <a href="register.html" style="color: white;">Registrate</a></p>
+    </div>
+    <div class="footer">
+        <footer>
+           <p>&copy; 2025 gameconnect. Todos los derechos reservados.</p>
+       </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gameconnect</title>
+    <link rel="stylesheet" href="/src/assets/css/styleprincipal.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <header>
+        <a href="#inicio" class="logo" style="margin-left: 10px;">
+            <img src="/imagenes/logo-2078018_1280.png" width="60" height="60" alt="logo de la marca">
+        </a>
+        <nav>
+            <a href="#inicio" class="nav-link">INICIO</a>
+            <a href="/src/sobrenosotros.html" class="nav-link">SOBRE NOSOTROS</a>
+            <a href="#featured-news">NOTICIAS</a>
+
+            <div class="dropdown2">
+                <a href="#" class="nav-link dropdown-toggle2">INGRESAR COMO</a>
+                <div class="Ingresar-como">
+                    <a href="/src/login.html">COMO CLIENTE</a>
+                    <a href="/src/loginemp.htmlq">COMO EMPLEADO</a>
+                    <a href="/src/loginadm.html">COMO ADMINISTRADOR</a>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <a href="#" class="nav-link dropdown-toggle">SECCIONES</a>
+                <div class="dropdown-menu">
+                    <a href="#catalog-section">CATALOGO DE JUEGOS</a>
+                    <a href="#rewards-section">RECOMPENSAS Y PROMOCIONES</a>
+                </div>
+            </div>
+
+            <a href="#area-formulario" class="nav-link">SOPORTE</a>
+        </nav>
+        <div class="header-actions" style="display: flex; align-items: center; gap: 12px;">
+    <form id="search-form" class="search-form-container" style="display: flex;">
+        <input type="text" placeholder="Buscar juegos..." id="search-bar">
+        <button type="submit">Buscar</button>
+    </form>
+    
+    <button id="modal" style="background: none; border: none; cursor: pointer;">
+        <img src="/imagenes/shopping-cart-1105049_1280.png" alt="Carrito de compras" width="40" height="40">
+    </button>
+</div>
+
+    </header>
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <section>
+        <div class="slider">
+            <div class="list">
+                <div class="item">
+                    <img src="imagenes/Assassin's Creed.gif" alt="">
+                    <div class="content">
+                        <div class="title">ASSASIN CREED</div>
+                        <div class="type">DISPONIBLE</div>
+                        <div class="description">
+                            Assassin's Creed es una saga de videojuegos de acción y aventura que te sumerge en historias de asesinos a lo largo de diferentes épocas históricas. Disponible para compra en múltiples plataformas, ofrece exploración en mundos abiertos, sigilo, combate y tramas intrigantes.
+                        </div>
+                        <div class="button">
+                            <button>VER MAS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imagenes/cofg.gif" alt="">
+                    <div class="content">
+                        <div class="title">CAll OF DUTY</div>
+                        <div class="type">DISPONIBLE</div>
+                        <div class="description">
+                            <p>Sumérgete en la acción intensa y la adrenalina pura con Call of Duty, el aclamado shooter que redefine la guerra moderna.</p>
+                        </div>
+                        <div class="button">
+                            <button>VER MAS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imagenes/supermario.gif" alt="">
+                    <div class="content">
+                        <div class="title">SUPER MARIO</div>
+                        <div class="type">DISPONIBLE</div>
+                        <div class="description">
+                            <p>Super Mario Galaxy es un juego de plataformas en 3D donde Mario viaja por planetas y galaxias en busca de estrellas.</p>
+                        </div>
+                        <div class="button">
+                            <button>VER MAS</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <img src="imagenes/eldenring.gif" alt="">
+                    <div class="content">
+                        <div class="title">ELDEN RING</div>
+                        <div class="type">DISPONIBLE</div>
+                        <div class="description">
+                            <p>Álzate, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden y encumbrarte como señor del Círculo en las Tierras Intermedias.</p>
+                        </div>
+                        <div class="button">
+                            <button>VER MAS</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="thumbnail">
+                <div class="item">
+                    <img src="imagenes/assassinscreedcaratula.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="imagenes/callofdutycaratula.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="imagenes/super-mariocaratula.jpg" alt="">
+                </div>
+                <div class="item">
+                    <img src="imagenes/eldenringcaratula.jpg" alt="">
+                </div>
+            </div>
+
+            <div class="nextPrevArrows">
+                <button class="prev">&lt;</button>
+                <button class="next">&gt;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+    <section id="featured-news" class="featured-news">
+        <h2 data-aos="fade-right"><img src="imagenes/megaphone.png" alt="icono-noticias" class="title-icon"> Noticias Destacadas.</h2>
+        <div class="news-container">
+            <article class="news-card" data-aos="fade-up">
+                <img src="imagenes/starfield.gif" alt="Starfield lanzamiento">
+                <div class="news-content">
+                    <h3>Lanzamiento de Starfield 🚀</h3>
+                    <p>Explora el universo en uno de los juegos más esperados del año. Ya disponible en nuestra tienda.</p>
+                    <a href="#">Leer más</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="imagenes/zelda.gif" alt="Zelda Tears of the Kingdom">
+                <div class="news-content">
+                    <h3>Zelda: Tears of the Kingdom 🗡️</h3>
+                    <p>La nueva aventura de Link llega con mecánicas nunca antes vistas. ¡Descúbrelo ahora!</p>
+                    <a href="#">Leer más</a>
+                </div>
+            </article>
+
+            <article class="news-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="imagenes/gta6.gif" alt="Rumores GTA VI">
+                <div class="news-content">
+                    <h3>GTA VI: Nuevos rumores 🔥</h3>
+                    <p>Analizamos los últimos rumores y filtraciones sobre el próximo título de Rockstar Games.</p>
+                    <a href="#">Leer más</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="catalog-section" class="catalogo">
+        <h2 class="catalogo-titulo" data-aos="fade-right"><img src="imagenes/control2.png" alt="icono-catalogo" class="title-icon">Catalogo de Juegos.</h2>
+        <div class="catalogo-grid">
+            <div class="juego-card" data-aos="fade-up">
+                <img src="imagenes/seaofthieves.gif" alt="Juego 1">
+                <h3>Sea of thieves</h3>
+                <p>Género: Aventura</p>
+                <p class="precio">$80.000</p>
+                <button class="btn-agregar-carrito"
+                    data-id="1"
+                    data-nombre="Sea of Thieves"
+                    data-precio="80000">
+                    Agregar al carrito
+                </button>
+                <button>
+                    Ver detalles
+                </button>
+            </div>
+            <div class="juego-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="imagenes/valorant.gif" alt="Juego 2">
+                <h3>Valorant</h3>
+                <p>Género: Shooter</p>
+                <p class="precio">GRATIS</p>
+                <button class="btn-agregar-carrito"
+                    data-id="2"
+                    data-nombre="Valorant"
+                    data-precio="0">
+                    Agregar al carrito
+                </button>
+                <button class="btn-ver-detalles" data-id="2">
+                    <a href="#">Ver detalles</a>
+                </button>
+            </div>
+            <div class="juego-card" data-aos="fade-up" data-aos-delay="400">
+                <img src="imagenes/eldenring.gif" alt="Juego 3">
+                <h3>Elden ring</h3>
+                <p>Género: RPG</p>
+                <p class="precio">$200.000</p>
+                <button class="btn-agregar-carrito"
+                    data-id="3"
+                    data-nombre="Elden Ring"
+                    data-precio="200000">
+                    Agregar al carrito
+                </button>
+                <button class="btn-ver-detalles" data-id="3">
+                    <a href="#">Ver detalles</a>
+                </button>
+            </div>
+            <div class="juego-card" data-aos="fade-up" data-aos-delay="600">
+                <img src="imagenes/ageofempires.gif" alt="Juego 4">
+                <h3>Age of empires</h3>
+                <p>Género: Estrategia</p>
+                <p class="precio">$28.000</p>
+                <button class="btn-agregar-carrito"
+                    data-id="4"
+                    data-nombre="Age of Empires"
+                    data-precio="28000">
+                    Agregar al carrito
+                </button>
+                <button class="btn-ver-detalles" data-id="4">
+                    <a href="#">Ver detalles</a>
+                </button>
+            </div>
+            <div class="juego-card" data-aos="fade-up" data-aos-delay="800">
+                <img src="imagenes/The Sims GIF.gif" alt="Juego 5">
+                <h3>The sims 4</h3>
+                <p>Género: Simulación</p>
+                <p class="precio">GRATIS</p>
+                <button class="btn-agregar-carrito"
+                    data-id="5"
+                    data-nombre="The Sims 4"
+                    data-precio="0">
+                    Agregar al carrito
+                </button>
+                <button class="btn-ver-detalles" data-id="5">
+                    <a href="#">Ver detalles</a>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <section id="rewards-section">
+        <h2 data-aos="fade-right" class="ryp"><img src="imagenes/estrella.png" alt="icono-rewars" class="title-icon">Recompensas y Promociones.</h2>
+        <div data-aos="fade-up" class="contenedor-cubs">
+            <div class="reward-item">
+                <h3>10% Descuento en tu Primera Compra</h3>
+                <p>Regístrate y obtén un 10% de descuento en tu primera compra.</p>
+            </div>
+            <div class="reward-item">
+                <h3>Programa de Puntos de Fidelidad</h3>
+                <p>Acumula puntos con cada compra y canjéalos por descuentos en futuras compras.</p>
+            </div>
+            <div class="reward-item">
+                <h3>Ofertas Especiales Semanales</h3>
+                <p>Consulta nuestras ofertas especiales cada semana y ahorra en tus juegos favoritos.</p>
+            </div>
+            <div class="reward-item">
+                <h3>Promoción de Recomendación</h3>
+                <p>Recomienda a un amigo y recibe un cupón de descuento en tu próxima compra.</p>
+            </div>
+        </div>
+    </section>
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <div class="social-bubbles">
+        <a href="https://facebook.com" target="_blank" rel="noopener" class="social-bubble facebook" title="Facebook">
+            <i class="fab fa-facebook"></i>
+        </a>
+        <a href="https://twitter.com" target="_blank" rel="noopener" class="social-bubble twitter" title="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" class="social-bubble instagram" title="Instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+
+    <section class="zona_formulario">
+        <img class="img-soporte" src="/imagenes/repair-6946846_1920.png" alt="" width="700px" height="435px">
+        <div class="area-formulario" id="area-formulario">
+            <h2>Soporte técnico</h2>
+            <form id="support-form" enctype="multipart/form-data">
+                <div class="campo-dato">
+                    <label for="nombreUsuario">Nombre:</label>
+                    <input type="text" id="nombreUsuario" name="nombre" required placeholder="Tu nombre completo">
+                </div>
+
+                <div class="campo-dato">
+                    <label for="textoQueja">Indique su problema</label>
+                    <textarea id="textoQueja" name="queja" rows="4" required placeholder="Describe tu problema"></textarea>
+                </div>
+
+                <div class="archivo">
+                    <label for="cargarArchivo">Subir archivo:</label>
+                    <input type="file" id="cargarArchivo" name="archivo" accept=".jpg, .jpeg, .png, .pdf, .docx">
+                </div>
+
+                <button class="btn-soporte" type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- -------------------------------------------------------------------------------------------------------------------- -->
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Gameconnect. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <div id="cart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items">
+                <!-- Los elementos del carrito se añadirán aquí -->
+            </div>
+            <div id="cart-total">
+                <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="/src/js/searchform.js"></script>
+    <script src="/src/js/slider.js"></script>
+    <script src="/src/js/carrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="/src/js/aosinit.js"></script>
+    <script src="/src/js/supportform.js"></script>
+</body>
+</html>

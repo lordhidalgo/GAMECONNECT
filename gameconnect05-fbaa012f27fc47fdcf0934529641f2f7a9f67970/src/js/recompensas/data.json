@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "titulo": "10% Descuento en tu Primera Compra",
+    "descripcion": "Regístrate y obtén un 10% de descuento en tu primera compra."
+  },
+  {
+    "id": 2,
+    "titulo": "Programa de Puntos de Fidelidad",
+    "descripcion": "Acumula puntos con cada compra y canjéalos por descuentos en futuras compras."
+  },
+  {
+    "id": 3,
+    "titulo": "Ofertas Especiales Semanales",
+    "descripcion": "Consulta nuestras ofertas especiales cada semana y ahorra en tus juegos favoritos."
+  },
+  {
+    "id": 4,
+    "titulo": "Promoción de Recomendación",
+    "descripcion": "Recomienda a un amigo y recibe un cupón de descuento en tu próxima compra."
+  }
+]

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de sesion.</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: #06141B;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            color: #253745;
+        }
+
+        .logo {
+            position: absolute;
+            top: 55px;
+            left: 48%;
+        }
+
+        .login-form {
+            background: #CCD0CF;
+            padding: 20px 30px;
+            border-radius: 5px;
+            border-top: #CCD0CF 3px solid;
+            color: #253745;
+            box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
+            width: 400px;
+            height: 340px;
+            margin: auto;
+            margin-top: 180px;
+        }
+
+        .login-form h5 {
+            margin: 0;
+            text-align: center;
+            height: 40px;
+            margin-bottom: 30px;
+            border-bottom: 1px solid;
+            font-size: 20px;
+        }
+
+        .controls {
+            width: 100%;
+            padding: 11px 10px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            border: 1px solid black;
+            background: #252323;
+            font-size: 14px;
+            font-weight: bold;
+            box-sizing: border-box; /* Asegura que el padding no afecte el ancho total */
+        }
+
+        .controls::placeholder {
+            color: #aaa; /* Color del placeholder */
+            font-size: 14px; /* Tamaño de la fuente del placeholder */
+        }
+
+        .controls:focus {
+            border-color: #4A5C6A;
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 92, 106, 0.5);
+        }
+    
+        .buttons {
+            width: 100%;
+            padding: 10px;
+            background-color: #4A5C6A;
+            color: black;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .buttons:hover {
+            background-color: #253745;
+            color: white;
+        }
+
+        .login-form p {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 14px;
+            border-bottom: 1px solid;
+        }
+
+        .login-form a {
+            color: #253745;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .login-form a:hover {
+            text-decoration: underline;
+        }
+
+        .Registrate {
+            position: absolute;
+            top: 76%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            font-size: 14px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="/imagenes/logo-2078018_1280.png" width="60" height="60" alt="logo de la marca">
+    </div>
+
+    <section class="login-form">
+        <h5>Inicia sesion.</h5>
+        <input class="controls" type="text" placeholder="Usuario" id="username" required>
+        <input class="controls" type="password" placeholder="Contraseña" id="password" required>
+        <a href="/src/indexcliente.html"><input class="buttons" type="submit" value="Iniciar sesion" id="loginButton"></a>
+        <p><a href="#">¿olvidaste tu contraseña?</a></p>
+    </section>
+    <div class="Registrate">
+        <p style="text-align: center; color: #4A5C6A;">¿No tienes cuenta? <a href="register.html" style="color: #253745;">Registrate</a></p>
+    </div>
+    <div class="footer">
+        <footer>
+           <p>&copy; 2025 gameconnect. Todos los derechos reservados.</p>
+       </footer>
+    </div>
+</body>
+</html>

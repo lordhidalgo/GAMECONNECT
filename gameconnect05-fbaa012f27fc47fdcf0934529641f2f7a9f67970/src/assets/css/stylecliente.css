@@ -1,0 +1,452 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(270deg, #353533, #a3babd, #ffffff);
+    background-size: 800% 800%;
+    animation: gradientAnimation 15s ease infinite;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 20px; /* Reduce el padding vertical para disminuir la altura del header */
+    margin: 0;
+    top: 0;
+    background-color: black;
+    border-top: #ff5722 3px solid;
+}
+
+.tarjeta-cliente {
+    width: 300px;
+    background-color: #a3babd;
+    border-radius: 10px;
+    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    padding: 10px; /* Reduce el padding interno de la tarjeta */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border:#ff5722 3px solid; /* Cambia el color del borde de la tarjeta */
+    border-top: #ff5722 3px solid; /* Cambia el color de la parte superior de la tarjeta */
+    margin: 20px auto; /* Centra la tarjeta horizontalmente */
+}
+
+.tarjeta-cliente img {
+    width: 80px; /* Reduce el tamaño de la imagen */
+    height: 80px; /* Reduce el tamaño de la imagen */
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px; /* Reduce el margen inferior */
+}
+
+.tarjeta-cliente h1 {
+    margin: 5px 0; /* Reduce el margen vertical */
+    font-size: 1.2em; /* Reduce el tamaño de la fuente */
+}
+
+.tarjeta-cliente p {
+    margin: 3px 0; /* Reduce el margen vertical */
+    color: #ff5722;
+}
+
+.button {
+    margin-top: 8px; /* Reduce el margen superior */
+}
+
+.button button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px; /* Reduce el padding del botón */
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em; /* Reduce el tamaño de la fuente */
+    border: none;
+    margin-left: 5px;
+    cursor: pointer;
+    transition: 0.8s;
+    letter-spacing: 2px;
+    
+}
+
+.button button:hover {
+    background-color: #ff5722;
+    transform: scale(1.2);
+    cursor: pointer;
+    transition: 0.8s;
+    color: white;
+}
+
+.saludo {
+    color: #a3babd;
+    font-size: 1.5em; /* Reduce el tamaño de la fuente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-right: 300px; /* Reduce el margen derecho */
+}
+
+/* Estilos para el modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: black;
+}
+
+.modal-content form {
+    display: flex;
+    flex-direction: column;
+}
+
+.modal-content label {
+    margin-top: 10px;
+    color: #555;
+}
+
+.modal-content input, .modal-content textarea {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background-color: #e64a19;
+}
+
+#eliminarCuentaBtn {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#eliminarCuentaBtn:hover {
+    background-color: #cc0000;
+}
+
+
+.gif {
+    width: 100%; 
+    overflow: hidden; 
+    margin: 0; 
+    padding: 0; 
+}
+
+.gif img {
+    width: 100%; 
+    height: 750px;
+    object-fit: cover;
+}
+
+.seccion-principal {
+    display: flex; /* Cambia a flex para una mejor distribución */
+    justify-content: center; /* Centra los elementos horizontalmente */
+    align-items: flex-start; /* Alinea los elementos al inicio verticalmente */
+    flex-direction: row; /* Mantiene la dirección en fila */
+    margin-top: 20px; /* Margen superior */
+    margin-bottom: 50px; /* Margen inferior */
+    width: 100%; /* Asegura que la sección ocupe todo el ancho disponible */
+    gap: 20px; /* Añade espacio entre los elementos */
+}
+
+.ultimos-pedidos, .biblioteca-historial, .estado-pedido {
+    width: 300px; /* Ancho de cada módulo */
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    border-radius: 10px;
+    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    border-top: #ff5722 3px solid;
+}
+
+.ultimos-pedidos h2, .biblioteca-historial h2, .estado-pedido h2 {
+    color: #ff5722;
+}
+
+.ultimos-pedidos h3, .biblioteca-historial h3, .estado-pedido h3 {
+    color: #a3babd;
+}
+
+.btn-ver-mas button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-left: 5px;
+    transition: all 0.8s ease;
+    letter-spacing: 2px;
+    text-decoration: none;
+}
+
+.btn-ver-mas button:hover {
+    background-color: #ff5722;
+    transform: scale(1.2);
+    color: white;
+}
+
+.titulo {
+    color: #ff5722;
+    font-size: 1.5em; /* Reduce el tamaño de la fuente */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-right: 300px; /* Reduce el margen derecho */
+    margin-left: 277px; /* Añade margen izquierdo */
+    margin-bottom: 0%
+}
+
+.cliente-section {
+  display: flex;
+  gap: 40px; /* Espacio entre slider y formulario */
+  padding: 20px 40px;
+  box-sizing: border-box;
+  height: 80vh;
+}
+
+.cliente-slider,
+.cliente-formulario {
+  flex: 1; /* Ambos toman la mitad del espacio */
+  border-radius: 15px;
+}
+
+/* SLIDER */
+.cliente-slider {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+}
+
+.cliente-slide {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.cliente-slide.active {
+  display: flex;
+}
+
+.cliente-slide img {
+  max-height: 250px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  object-fit: cover;
+}
+
+.cliente-content h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #a3babd;
+}
+
+.cliente-content p {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.cliente-content button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 8px 16px; /* Reduce el padding del botón */
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.9em; /* Reduce el tamaño de la fuente */
+  border: none;
+  margin-left: 5px;
+  cursor: pointer;
+  transition: 0.8s;
+  letter-spacing: 2px;
+}
+
+.cliente-content button:hover {
+  background-color: #ff5722;
+  transform: scale(1.2);
+  cursor: pointer;
+  transition: 0.8s;
+  color: white;
+}
+
+.cliente-prev,
+.cliente-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border: none;
+  color: #000;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.cliente-prev:hover,
+.cliente-next:hover {
+  background: #ff5722;
+  color: #fff;
+  transform: translateY(-50%) scale(1.1);
+  transition: 0.5s;
+}
+
+.cliente-prev { left: 10px; }
+.cliente-next { right: 10px; }
+
+/* FORMULARIO */
+.cliente-formulario {
+    position: relative;
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    margin-right: 48px;
+    max-width: 480px;
+    /* Si quieres que no quede tan a la izquierda, elimina 'left: 55%;' o ajústalo */
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    align-items: center;
+    color: #fff;
+    border-top: #ff5722 3px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cliente-formulario h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: #ff5722; /* Cambiado a blanco para que contraste en fondo oscuro */
+}
+
+.cliente-formulario form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+}
+
+.cliente-formulario input[type="text"],
+.cliente-formulario input[type="email"],
+.cliente-formulario textarea,
+.cliente-formulario input[type="file"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    color: white;
+    border-radius: 6px;
+    font-size: 1em;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(37, 35, 35);
+}
+
+.cliente-formulario input[type="text"]:focus,
+.cliente-formulario input[type="email"]:focus,
+.cliente-formulario textarea:focus,
+.cliente-formulario input[type="file"]:focus {
+    border-color: #ff5722;
+    outline: none;
+}
+
+.cliente-formulario input[required],
+.cliente-formulario textarea[required] {
+    border-color: white;
+}
+
+.cliente-formulario button {
+    background-color: white;
+    color: black;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.cliente-formulario button:hover {
+    background-color: #e64a19;
+    transform: scale(1.05);
+    color: white;
+    letter-spacing: 2px;
+}
+
+
+
+.footer {
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}

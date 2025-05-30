@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Resumen de Compra</title>
+  <link rel="stylesheet" href="/src/assets/css/stylecomprar.css">
+</head>
+<body>
+  <div class="container"> <div class="header">
+      <h1>Tu Carrito de Compras</h1>
+      <a href="/src/index.html" class="btn-volver">Volver a la Tienda</a>
+    </div>
+
+    <h1>Resumen del Pedido</h1>
+    <div id="resumen-carrito"></div>
+    <h3>Total: $<span id="total-pedido">0</span></h3>
+    <button id="btn-pagar">Pagar ahora</button>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const resumenContainer = document.getElementById('resumen-carrito');
+      const totalElement = document.getElementById('total-pedido');
+      const pagarBtn = document.getElementById('btn-pagar');
+
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+      if (cart.length === 0) {
+        resumenContainer.innerHTML = '<p>No hay productos en el carrito.</p>';
+        pagarBtn.disabled = true;
+        pagarBtn.style.background = '#ccc';
+        return;
+      }
+
+      let total = 0;
+
+      cart.forEach(item => {
+        const div = document.createElement('div');
+        div.className = 'producto';
+        div.innerHTML = `<strong>${item.nombre}</strong><br>Precio: $${item.precio.toFixed(2)}`;
+        resumenContainer.appendChild(div);
+        total += item.precio;
+      });
+
+      totalElement.textContent = total.toFixed(2);
+
+      pagarBtn.addEventListener('click', () => {
+        alert('Aquí iría la pasarela de pago real');
+      });
+    });
+  </script>
+</body>
+</html>

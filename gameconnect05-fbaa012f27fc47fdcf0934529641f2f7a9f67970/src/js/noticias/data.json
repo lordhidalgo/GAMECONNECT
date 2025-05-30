@@ -1,0 +1,20 @@
+[
+  {
+    "image": "imagenes/starfield.gif",
+    "title": "Lanzamiento de Starfield 🚀",
+    "description": "Explora el universo en uno de los juegos más esperados del año. Ya disponible en nuestra tienda.",
+    "link": "#"
+  },
+  {
+    "image": "imagenes/zelda.gif",
+    "title": "Zelda: Tears of the Kingdom 🗡️",
+    "description": "La nueva aventura de Link llega con mecánicas nunca antes vistas. ¡Descúbrelo ahora!",
+    "link": "#"
+  },
+  {
+    "image": "imagenes/gta6.gif",
+    "title": "GTA VI: Nuevos rumores 🔥",
+    "description": "Analizamos los últimos rumores y filtraciones sobre el próximo título de Rockstar Games.",
+    "link": "#"
+  }
+]

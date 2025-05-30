@@ -1,0 +1,32 @@
+[
+    {
+        "images": "http://localhost:5173/imagenes/Assassin's%20Creed.gif",
+        "name": "ASSASIN CREED",
+        "estado": "DISPONIBLE",
+        "description": "Assassin's Creed es una saga de videojuegos de acción y aventura que te sumerge en historias de asesinos a lo largo de diferentes épocas históricas. Disponible para compra en múltiples plataformas, ofrece exploración en mundos abiertos, sigilo, combate y tramas intrigantes."
+    },
+    {
+        "images": "http://localhost:5173/imagenes/cofg.gif",
+        "name": "JavaScript is a high-level, often just-in-time compiled, and multi-paradigm programming language. It has become a standard for web development.",
+        "description": "programming"
+    },
+    {
+        "images": "http://localhost:5173/imagenes/supermario.gif",
+        "name": "CAll OF DUTY",
+        "estado": "DISPONIBLE",
+        "description": "Sumérgete en la acción intensa y la adrenalina pura con Call of Duty, el aclamado shooter que redefine la guerra moderna."
+    },
+    {
+        "images": "http://localhost:5173/imagenes/eldenring.gif",
+        "name": "SUPER MARIO",  
+        "estado": "DISPONIBLE",
+        "description": "Super Mario Galaxy es un juego de plataformas en 3D donde Mario viaja por planetas y galaxias en busca de estrellas."
+    },
+    {
+        "images": "http://localhost:5173/imagenes/fortnite.gif",
+        "name": "ELDEN RING",
+        "estado": "DISPONIBLE",
+        "description": "Elden Ring es un juego de rol de acción desarrollado por FromSoftware, conocido por su mundo abierto y su narrativa profunda."
+    }
+    
+]

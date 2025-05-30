@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Tu apartado.</title>
+    <link rel="stylesheet" href="/src/assets/css/stylecliente.css" />
+</head>
+<body>
+    
+    <header>
+        <div class="tarjeta-cliente">
+            <img src="/imagenes/user-icon.png" alt="Luis Mario Arcila" />
+            <div>
+                <h1>Luis Mario Arcila Hidalgo "Lordhidalgo"</h1>
+                <p>ID: 123456789</p>
+            </div>
+            <div class="button">
+                <button id="miPerfilBtn">Mi perfil</button>
+            </div>
+        </div>
+        <div class="saludo">
+            <h1>¡Bienvenido a tu espacio!</h1>
+        </div>
+    </header>
+
+    <div id="miPerfilModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Tu información personal.</h2>
+            <form id="perfilForm">
+                <label for="nombreCompleto">Nombre completo:</label>
+                <input type="text" id="nombreCompleto" name="nombreCompleto" required>
+
+                <label for="correo">Correo:</label>
+                <input type="email" id="correo" name="correo" required>
+
+                <label for="telefono">Número de teléfono:</label>
+                <input type="tel" id="telefono" name="telefono" required>
+
+                <label for="direccion">Dirección de residencia:</label>
+                <input type="text" id="direccion" name="direccion" required>
+
+                <label for="metodosPago">Métodos de pago guardados:</label>
+                <input type="text" id="metodosPago" name="metodosPago" required>
+
+                <label for="subscripcion">Suscripción a noticias:</label>
+                <input type="checkbox" id="subscripcion" name="subscripcion">
+
+                <button type="submit">Guardar cambios</button>
+            </form>
+            <button id="eliminarCuentaBtn">Eliminar cuenta</button>
+        </div>
+    </div>
+
+    <div class="gif">
+        <img src="/imagenes/Car Pixel Art GIF by Raw Fury.gif" alt="GIF de bienvenida" />
+    </div>
+
+    <section class="seccion-principal">
+        <div class="ultimos-pedidos">
+            <h2>Últimos Pedidos.</h2>
+            <div>
+                <h3>Pedido 1</h3>
+                <p>Rainbow six.</p>
+            </div>
+            <div>
+                <h3>Pedido 2</h3>
+                <p>Cyberpunk 2077.</p>
+            </div>
+            <div>
+                <h3>Pedido 3</h3>
+                <p>Fc 25.</p>
+            </div>
+        </div>
+        <div class="biblioteca-historial">
+            <h2>Tu biblioteca - historial.</h2>
+            <div>
+                <h3>Juego 1</h3>
+                <p>Rainbow six.</p>
+            </div>
+            <div>
+                <h3>Juego 2</h3>
+                <p>Cyberpunk 2077.</p>
+            </div>
+            <div>
+                <h3>Juego 3</h3>
+                <p>Fc 25.</p>
+            </div>
+            <div>
+                <h3>Juego 4</h3>
+                <p>Red dead redemption 2</p>
+            </div>
+            <div class="btn-ver-mas">
+                <a href="#"><button>Ver más</button></a>
+            </div>
+        </div>
+        <div class="estado-pedido">
+            <h2>Estado de tus pedidos.</h2>
+            <div>
+                <h3>Rainbow six.</h3>
+                <p>Tu pedido ha sido enviado.</p>
+            </div>
+            <div>
+                <h3>Cyberpunk 2077.</h3>
+                <p>Tu pedido ha sido entregado.</p>
+            </div>
+            <div>
+                <h3>Fc 25.</h3>
+                <p>Tu pedido ha sido cancelado.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="titulo"><h3>Recomendaciones para ti.</h3></div>
+    <section class="cliente-section">
+
+        <div class="cliente-slider">
+            <div class="cliente-slide active">
+                <img src="/imagenes/Assassin's Creed.gif" alt="" />
+                <div class="cliente-content">
+                    <h3>ASSASSIN'S CREED</h3>
+                    <p>Una saga de asesinos en diferentes épocas históricas. Acción, sigilo y mundo abierto.</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+
+            <div class="cliente-slide">
+                <img src="/imagenes/cofg.gif" alt="" />
+                <div class="cliente-content">
+                    <h3>CALL OF DUTY</h3>
+                    <p>Disfruta del shooter más intenso con acción moderna y combates realistas.</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+
+            <div class="cliente-slide">
+                <img src="/imagenes/fornitegif.gif" alt="" />
+                <div class="cliente-content">
+                    <h3>FORTNITE</h3>
+                    <p>Construye, combate y sobrevive en el mundo de Fortnite. ¡La batalla comienza!</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+
+            <div class="cliente-slide">
+                <img src="/imagenes/lolgif.gif" alt="" />
+                <div class="cliente-content">
+                    <h3>LEAGUE OF LEGENDS</h3>
+                    <p>Un juego de estrategia en tiempo real donde los jugadores luchan por la victoria.</p>
+                    <button>Ver más</button>
+                </div>
+            </div>
+
+            <button class="cliente-prev">&lt;</button>
+            <button class="cliente-next">&gt;</button>
+        </div>
+
+        <!-- FORMULARIO -->
+        <div class="cliente-formulario">
+            <h2>Soporte Técnico</h2>
+            <form id="support-form">
+                <input type="text" id="nombreUsuario" placeholder="Nombre completo" required />
+                <input type="email" id="correoUsuario" placeholder="Correo electrónico" required />
+                <textarea id="descripcionProblema" rows="5" placeholder="Describe tu problema..." required></textarea>
+                <button type="submit">Enviar solicitud</button>
+            </form>
+        </div>
+    </section>
+
+    <div class="footer">
+        <footer>
+            <p>&copy; 2025 Gameconnect. Todos los derechos reservados.</p>
+        </footer>
+    </div>
+
+    <script src="/src/js/slidercliente.js"></script>
+    <script src="/src/js/supportcformcli.js" defer></script>
+    <script src="/src/js/modalmiperfil.js"></script>
+</body>
+</html>

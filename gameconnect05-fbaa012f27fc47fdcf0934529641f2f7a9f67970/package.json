@@ -1,0 +1,39 @@
+{
+  "name": "boilerplate-vite-tailwindcss",
+  "version": "1.0.0",
+  "description": "Boilerplate Vite + TailwindCSS",
+  "keywords": [
+    "vite",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lordhidalgo/proyectointegrador1.1.git"
+  },
+  "author": {
+    "name": "zexarcore<Julio C. Cortes C.>",
+    "email": "zexarcore@protonmail.com",
+    "url": "https://github.com/lordhidalgo/proyectointegrador1.1.git"
+  },
+  "license": "BSD 3-Clause",
+  "homepage": "https://github.com/lordhidalgo/proyectointegrador1.1.git",
+  "type": "module",
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "path": "0.12.7"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.0.8",
+    "vite": "6.1.1",
+    "tailwindcss": "4.0.8",
+    "autoprefixer": "10.4.20"
+  }
+}
