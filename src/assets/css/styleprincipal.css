@@ -23,11 +23,12 @@ header {
     align-items: center;
     color: white;
     text-align: center;
-    height: 80px;
+    height: auto;
     margin-top: 5px;
     margin-left: 5px;
     margin-right: 5px;
     box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
+    flex-wrap: wrap;
     border-top: #9BA8AB 3px solid;
 }
 
@@ -35,6 +36,8 @@ header {
 nav {
     display: flex;
     margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 nav a {
@@ -340,7 +343,8 @@ a {
 
 /* Estilos para el slider */
 .slider {
-    height: 80vh;
+    height: auto;
+    min-height: 80vh;
     margin-top: 2rem;
     margin-left: 5px;
     margin-right: 5px;
@@ -368,15 +372,18 @@ a {
 .slider .list .item .content {
     position: absolute;
     top: 20%;
-    width: 1140px;
-    max-width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    padding-right: 30%;
+    width: 90%;
+    max-width: 800px;
+    left: 0;
+    transform: none;
+    padding: 0 40px;
     box-sizing: border-box;
     color: #fff;
     text-shadow: 0 5px 10px #0004;
+    text-align: left;
+    align-items: flex-start;
 }
+
 
 .slider .list .item .content .title,
 .slider .list .item .content .type {
@@ -387,20 +394,22 @@ a {
 
 .slider .list .item .content .title {
     background-color: rgba(103, 87, 87, 0.5);
-    width: 80%;
+    width: fit-content;
+    padding: 5px;
 }
 
 .slider .list .item .type {
     color: #253745;
     background-color: rgba(255, 255, 255, 0.5);
-    width: 70%;
+    width: fit-content;
+    padding: 5px;
 }
 
 .slider .list .item .button {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2, 130px);
     grid-template-rows: 40px;
-    gap: 5px;
+    gap: 10px;
     margin-top: 20px;
 }
 
@@ -410,7 +419,7 @@ a {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-weight: 500;
     cursor: pointer;
-    transition: 0.8s;
+    transition: all 0.3s;
     letter-spacing: 2px;
     border-radius: 10px;
 }
@@ -419,7 +428,7 @@ a {
     letter-spacing: 3px;
     background-color: #253745;
     color: #fff;
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .slider .list .item .button button:nth-child(2) {
@@ -435,12 +444,12 @@ a {
     width: max-content;
     z-index: 100;
     display: flex;
-    gap: 20px;
+    gap: 10px;
 }
 
 .thumbnail .item {
-    width: 110px;
-    height: 180px;
+    width: 80px;
+    height: 80px;
     flex-shrink: 0;
     position: relative;
 }
@@ -454,7 +463,7 @@ a {
 }
 
 .thumbnail .item:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
     transition: 0.5s;
     cursor: pointer;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
@@ -473,21 +482,65 @@ a {
 }
 
 .nextPrevArrows button {
-    width: 40px;
-    height: 40px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background-color: white;
     border: none;
     color: black;
     font-weight: bold;
-    transition: 0.5s;
+    transition: all 0.3s;
     cursor: pointer;
 }
 
 .nextPrevArrows button:hover {
     background-color: #253745;
     color: white;
-    transform: scale(1.2);
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .slider {
+        height: auto;
+        max-height: 60vh; /* Altura máxima reducida para pantallas pequeñas */
+    }
+
+    .slider .list .item .content {
+        width: 95%; /* Ajuste para pantallas pequeñas */
+        top: 10%; /* Ajuste para pantallas pequeñas */
+        transform: translateX(-50%);
+    }
+
+    .slider .list .item .content .title,
+    .slider .list .item .content .type {
+        font-size: 1.5em; /* Tamaño de fuente reducido */
+    }
+
+    .slider .list .item .content .description {
+        font-size: 0.9em; /* Tamaño de fuente reducido para la descripción */
+    }
+
+    .slider .list .item .button button {
+        padding: 8px 16px; /* Padding reducido para botones */
+        font-size: 0.9em; /* Tamaño de fuente reducido para botones */
+    }
+
+    .thumbnail {
+        flex-direction: row; /* Asegura que los thumbnails se muestren en fila */
+        overflow-x: auto; /* Permite desplazamiento horizontal si es necesario */
+        justify-content: flex-start;
+    }
+
+    .thumbnail .item {
+        width: 60px; /* Tamaño ajustado para pantallas pequeñas */
+        height: 60px; /* Tamaño ajustado para pantallas pequeñas */
+        flex-shrink: 0;
+    }
+
+    .nextPrevArrows button {
+        width: 30px; /* Tamaño ajustado para botones de navegación */
+        height: 30px; /* Tamaño ajustado para botones de navegación */
+    }
 }
 
 /* Animaciones para el slider */
@@ -712,10 +765,10 @@ a {
 
 /* Estilos para recompensas y promociones */
 #rewards-section {
-    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    background: #CCD0CF;
     border-radius: 16px;
-    border: #ff5722 3px solid;
-    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    border: #4A5C6A 3px solid;
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
     margin: 40px auto;
     max-width: 1200px;
     padding: 40px 20px;
@@ -725,7 +778,7 @@ a {
 
 #rewards-section h2 {
     text-align: center;
-    color: white;
+    color: #11212D;
     font-size: 2rem;
     margin-bottom: 30px;
     letter-spacing: 4px;
@@ -751,7 +804,7 @@ a {
 }
 
 .reward-item {
-    background: #2c2c2c;
+    background: #253745;
     padding: 20px;
     border-radius: 12px;
     width: 280px;
@@ -761,12 +814,13 @@ a {
     animation: fadeInUp 1s ease-out;
     animation-delay: 0.2s;
     animation-fill-mode: both;
-    border-top: #ff5722 3px solid;
+    border-top: #253745 3px solid;
 }
 
 .reward-item:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    box-shadow: 0 12px 20px rgba(49, 49, 51, 0.5);
+    background: #4A5C6A;
 }
 
 .reward-item h3 {
@@ -778,12 +832,12 @@ a {
 }
 
 .reward-item:hover h3 {
-    color: #ff5722;
+    color: #253745;
 }
 
 .reward-item p {
     margin: 0;
-    color: #ff5722;
+    color: #9BA8AB;
     font-size: 15px;
     transition: color 0.3s ease;
 }
@@ -870,8 +924,7 @@ a {
     position: absolute;
     margin-left: 146px;
     margin-top: 20px;
-    border-top: #ff5722 3px solid;
-    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
 }
 
 .area-formulario {
@@ -879,14 +932,14 @@ a {
     background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
     margin-right: 48px;
     max-width: 480px;
     left: 55%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     align-items: center;
     color: #fff;
-    border-top: #ff5722 3px solid;
+    border-top: #CCD0CF 3px solid;
 }
 
 .area-formulario input[type="text"], textarea, input[type="file"] {
@@ -904,24 +957,27 @@ a {
 }
 
 .area-formulario input[type="text"]:focus, textarea:focus, input[type="file"]:focus {
-    border-color: #ff5722;
+    border-color: #4A5C6A;
     outline: none;
 }
 
 .btn-soporte {
-    background-color: white;
-    color: black;
-    padding: 12px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  background: #CCD0CF;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 14px 0;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background-color 0.3s ease;
 }
 
 .btn-soporte:hover {
-    background-color: #e64a19;
+    background: #4A5C6A;
     transform: scale(1.05);
     color: white;
     letter-spacing: 2px;
@@ -1062,3 +1118,28 @@ a {
     }
 }
 
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-form-container {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .dropdown-menu, .Ingresar-como {
+        position: static;
+        width: 100%;
+    }
+}
