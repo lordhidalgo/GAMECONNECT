@@ -251,26 +251,22 @@
 
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
     <section id="rewards-section">
-        <h2 data-aos="fade-right" class="ryp"><img src="imagenes/estrella.png" alt="icono-rewars" class="title-icon">Recompensas y Promociones.</h2>
-        <div data-aos="fade-up" class="contenedor-cubs rewards-grid">
-            <div class="reward-item">
-                <h3>10% Descuento en tu Primera Compra</h3>
-                <p>Regístrate y obtén un 10% de descuento en tu primera compra.</p>
-            </div>
-            <div class="reward-item">
-                <h3>Programa de Puntos de Fidelidad</h3>
-                <p>Acumula puntos con cada compra y canjéalos por descuentos en futuras compras.</p>
-            </div>
-            <div class="reward-item">
-                <h3>Ofertas Especiales Semanales</h3>
-                <p>Consulta nuestras ofertas especiales cada semana y ahorra en tus juegos favoritos.</p>
-            </div>
-            <div class="reward-item">
-                <h3>Promoción de Recomendación</h3>
-                <p>Recomienda a un amigo y recibe un cupón de descuento en tu próxima compra.</p>
-            </div>
-        </div>
-    </section>
+    <h2 data-aos="fade-right" class="ryp">
+        <img src="imagenes/estrella.png" alt="icono-rewars" class="title-icon">
+        Recompensas y Promociones.
+    </h2>
+
+    <!-- Contenedor dinámico de recompensas -->
+    <div data-aos="fade-up" class="contenedor-cubs rewards-grid">
+        <!-- Las recompensas se cargarán aquí desde JS -->
+    </div>
+
+    <!-- Clases ocultas para que Tailwind no purgue estilos usados dinámicamente -->
+    <div class="hidden">
+        <div class="p-4 bg-white shadow-md rounded-lg text-lg font-bold text-orange-600 text-sm text-gray-700 mt-2"></div>
+    </div>
+</section>
+
 
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
 
