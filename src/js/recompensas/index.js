@@ -1,35 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  async function getRewards() {
-      try {
-          const response = await fetch('data.json');
-          const data = await response.json();
-          return data || [];
-      } catch (error) {
-          console.error('Error loading rewards:', error.message);
-          return [];
-      }
-  }
+document.addEventListener("DOMContentLoaded", async () => {
+    const rewardsContainer = document.querySelector('.rewards-grid');
+    
+    if (!rewardsContainer) {
+        console.warn("No se encontró el contenedor de recompensas.");
+        return;
+    }
 
-  async function renderRewards() {
-      const rewards = await getRewards();
-      const container = document.getElementById('rewards-section');
-      if (!container) return console.error('Container for rewards not found');
+    try {
+        const response = await fetch('datarewards.json');
+        const rewards = await response.json();
 
-      if (rewards.length === 0) {
-          container.innerHTML = `<p>No rewards found.</p>`;
-          return;
-      }
+        if (!rewards.length) {
+            rewardsContainer.innerHTML = "<p>No se encontraron recompensas.</p>";
+            return;
+        }
 
-      container.innerHTML = rewards.map(reward => `
-          <div class="bg-green-100 p-4 rounded-lg shadow mb-4">
-              <h5 class="text-xl font-semibold">${reward.titulo}</h5>
-              <p class="text-gray-700">${reward.descripcion}</p>
-              ${reward.puntos ? `<p class="text-sm text-gray-600">Puntos: ${reward.puntos}</p>` : ''}
-          </div>
-      `).join('');
-  }
-
-  renderRewards();
-
+        rewardsContainer.innerHTML = rewards.map(reward => `
+            <div class="recompensa-card aos-init aos-animate p-4 bg-white shadow-md rounded-lg" data-aos="fade-up">
+                <h3 class="text-lg font-bold text-orange-600">${reward.titulo}</h3>
+                <p class="text-sm text-gray-700 mt-2">${reward.descripcion}</p>
+            </div>
+        `).join('');
+    } catch (error) {
+        console.error("Error al cargar las recompensas:", error);
+        rewardsContainer.innerHTML = "<p>Error al cargar las recompensas.</p>";
+    }
 });

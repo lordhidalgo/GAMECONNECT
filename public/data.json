@@ -4,34 +4,39 @@
     "nombre": "Sea of Thieves",
     "genero": "Aventura",
     "precio": 80000,
-    "imagen": "http://localhost:5173/imagenes/seaofthieves.gif"
+    "imagen": "http://localhost:5173/imagenes/seaofthieves.gif",
+    "descripcion": "DISPONIBLE"
   },
   {
     "id": 2,
     "nombre": "Valorant",
     "genero": "Shooter",
     "precio": 0,
-    "imagen": "http://localhost:5173/imagenes/valorant.gif"
+    "imagen": "http://localhost:5173/imagenes/valorant.gif",
+    "descripcion": "DISPONIBLE"
   },
   {
     "id": 3,
     "nombre": "Elden Ring",
     "genero": "RPG",
     "precio": 200000,
-    "imagen": "http://localhost:5173/imagenes/eldenring.gif"
+    "imagen": "http://localhost:5173/imagenes/eldenring.gif",
+    "descripcion": "DISPONIBLE"
   },
   {
     "id": 4,
     "nombre": "Age of Empires",
     "genero": "Estrategia",
     "precio": 28000,
-    "imagen": "http://localhost:5173/imagenes/ageofempires.gif"
+    "imagen": "http://localhost:5173/imagenes/ageofempires.gif",
+    "descripcion": "DISPONIBLE"
   },
   {
     "id": 5,
     "nombre": "The sims 4",
     "genero": "Simulacion",
     "precio": 0,
-    "imagen": "http://localhost:5173/imagenes/The%20Sims%20GIF.gif"
+    "imagen": "http://localhost:5173/imagenes/The%20Sims%20GIF.gif",
+    "descripcion": "DISPONIBLE"
   }
 ]

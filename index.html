@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/src/assets/css/styleprincipal.css">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
@@ -251,7 +252,7 @@
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
     <section id="rewards-section">
         <h2 data-aos="fade-right" class="ryp"><img src="imagenes/estrella.png" alt="icono-rewars" class="title-icon">Recompensas y Promociones.</h2>
-        <div data-aos="fade-up" class="contenedor-cubs">
+        <div data-aos="fade-up" class="contenedor-cubs rewards-grid">
             <div class="reward-item">
                 <h3>10% Descuento en tu Primera Compra</h3>
                 <p>Regístrate y obtén un 10% de descuento en tu primera compra.</p>
@@ -355,6 +356,11 @@
     <script src="/src/js/supportform.js"></script>
     <script src="/src/js/catalogo/index.js"></script>
      <script src="/src/js/recompensas/index.js"></script>
+    <script src="/src/js/recompensas/index.js" type="module"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+    AOS.init();
+    </script>
 
 </body>
 </html>

@@ -8,22 +8,9 @@
         body {
             margin: 0;
             padding: 0;
-            background: linear-gradient(270deg, #353533, #a3babd, #ffffff);
-            background-size: 800% 800%;
-            animation: gradientAnimation 15s ease infinite;
+            background: #06141B;
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-        }
-
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+            color: #253745;
         }
 
         .logo {
@@ -33,12 +20,12 @@
         }
 
         .login-form {
-            background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+            background: #CCD0CF;
             padding: 20px 30px;
             border-radius: 5px;
-            border-top: #ff5722 3px solid;
-            color: white;
-            box-shadow: 0 12px 20px rgba(255, 87, 34, 0.5);
+            border-top: #CCD0CF 3px solid;
+            color: #253745;
+            box-shadow: 0 12px 20px rgba(255, 255, 255, 0.5);
             width: 400px;
             height: 340px;
             margin: auto;
@@ -71,10 +58,16 @@
             font-size: 14px; /* Tamaño de la fuente del placeholder */
         }
 
+        .controls:focus {
+            border-color: #4A5C6A;
+            outline: none;
+            box-shadow: 0 0 5px rgba(74, 92, 106, 0.5);
+        }
+    
         .buttons {
             width: 100%;
             padding: 10px;
-            background-color: #ff5722;
+            background-color: #4A5C6A;
             color: black;
             border: none;
             border-radius: 5px;
@@ -82,8 +75,8 @@
         }
 
         .buttons:hover {
-            background-color: white;
-            color: #ff5722;
+            background-color: #253745;
+            color: white;
         }
 
         .login-form p {
@@ -94,7 +87,7 @@
         }
 
         .login-form a {
-            color: #a3babd;
+            color: #253745;
             text-decoration: none;
             font-size: 14px;
         }
@@ -124,27 +117,31 @@
             padding: 10px;
             border-radius: 5px;
         }
+
+        .registrate-text {
+            text-align: center;
+            color: #4A5C6A;
+        }
+
+        .registrate-link {
+            color: #253745;
+        }
     </style>
 </head>
 <body>
     <div class="logo">
         <img src="/imagenes/logo-2078018_1280.png" width="60" height="60" alt="logo de la marca">
     </div>
-
+        <p class="registrate-text">¿No tienes cuenta? <a href="register.html" class="registrate-link">Registrate</a></p>
     <section class="login-form">
         <h5>Inicia sesion.</h5>
         <input class="controls" type="text" placeholder="Usuario" id="username" required>
         <input class="controls" type="password" placeholder="Contraseña" id="password" required>
-        <a href="/src/indexadmin.html"><input class="buttons" type="submit" value="Iniciar sesion" id="loginButton"></a>
+        <a href="/src/indexcliente.html"><input class="buttons" type="submit" value="Iniciar sesion" id="loginButton"></a>
         <p><a href="#">¿olvidaste tu contraseña?</a></p>
     </section>
     <div class="Registrate">
-        <p style="text-align: center; color: white;">¿No tienes cuenta? <a href="register.html" style="color: white;">Registrate</a></p>
-    </div>
-    <div class="footer">
-        <footer>
-           <p>&copy; 2025 gameconnect. Todos los derechos reservados.</p>
-       </footer>
+        <p style="text-align: center; color: #4A5C6A;">¿No tienes cuenta? <a href="register.html" style="color: #253745;">Registrate</a></p>
     </div>
 </body>
 </html>
