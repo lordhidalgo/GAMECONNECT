@@ -346,12 +346,191 @@ a {
   background: #4A5C6A;
 }
 
+.modal-game-detail {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+    color: #CCD0CF;
+}
+
+.modal-content-detail {
+    background: #253745;
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: modalFadeIn 0.3s forwards;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+@keyframes modalFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-detail-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #f0f0f0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-detail-modal:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+.modal-body-game {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.modal-game-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-game-info {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.modal-game-info h2 {
+    font-size: 2.2rem;
+    color: #00BFFF;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-game-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #E0E0E0;
+    text-align: center;
+}
+
+.modal-game-price {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #00BFFF;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.modal-description-box {
+    background-color: #334756;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: justify;
+}
+
+.modal-description-box h3 {
+    font-size: 1.3rem;
+    color: #00BFFF;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.modal-description-box p {
+    font-size: 1rem;
+    color: #D0D0D0;
+    line-height: 1.7;
+}
+
+#add-to-cart-modal-btn {
+    margin-top: 2rem;
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: #9BA8AB;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#add-to-cart-modal-btn:hover {
+    background-color: #4A5C6A;
+    transform: translateY(-2px);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .modal-content-detail {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    .modal-game-image {
+        max-width: 80%;
+    }
+    .modal-game-info {
+        min-width: unset;
+    }
+    .modal-game-info h2 {
+        font-size: 1.8rem;
+    }
+    .modal-game-info p, .modal-description-box p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content-detail {
+        padding: 1rem;
+    }
+    .close-detail-modal {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+    #add-to-cart-modal-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
 
 /* Estilos para el slider */
 .slider {
     height: auto;
     min-height: 80vh;
-    margin-top: 2rem;
+    margin-top: 6%;
     margin-left: 5px;
     margin-right: 5px;
     overflow: hidden;
@@ -984,6 +1163,46 @@ a {
     transform: scale(1.05);
     color: white;
     letter-spacing: 2px;
+}
+
+/* Estilos para Toast Notifications */
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050; /* Por encima de modales, pero debajo de algún elemento crítico */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none; /* Permite clics a través del contenedor si no hay toasts */
+}
+
+.toast-notification {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(20px); /* Empieza un poco abajo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    min-width: 250px;
+    max-width: 350px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    pointer-events: auto; /* Permite interacciones con el toast */
+}
+
+.toast-notification.show {
+    opacity: 1; /* Se hace visible */
+    transform: translateY(0); /* Sube a su posición */
+}
+
+.toast-notification .toast-icon {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #4CAF50; /* Color verde para éxito */
 }
 
 /* Estilos para el pie de página */

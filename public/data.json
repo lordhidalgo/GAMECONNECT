@@ -5,7 +5,7 @@
     "genero": "Aventura",
     "precio": 80000,
     "imagen": "http://localhost:5173/imagenes/seaofthieves.gif",
-    "descripcion": "DISPONIBLE"
+    "descripcion": "DISPONIBLE - Explora un vasto mundo abierto repleto de islas vírgenes, navíos hundidos y misteriosos artefactos. Parte en pos de tesoros perdidos, enfréntate a capitanes esqueleto y custodia valiosos cargamentos de compañías comerciales. Además, ¡puedes darte a la pesca y la caza o volcarte en los cientos de objetivos secundarios!"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "genero": "Shooter",
     "precio": 0,
     "imagen": "http://localhost:5173/imagenes/valorant.gif",
-    "descripcion": "DISPONIBLE"
+    "descripcion": "DISPONIBLE - Valorant es un juego de disparos en primera persona basado en equipos, donde los jugadores asumen el papel de agentes con habilidades únicas. La estrategia y la colaboración son clave para ganar partidas."
   },
   {
     "id": 3,
@@ -21,7 +21,7 @@
     "genero": "RPG",
     "precio": 200000,
     "imagen": "http://localhost:5173/imagenes/eldenring.gif",
-    "descripcion": "DISPONIBLE"
+    "descripcion": "DISPONIBLE - Elden Ring es un juego de rol de acción desarrollado por FromSoftware. Los jugadores exploran un mundo abierto lleno de peligros, enfrentándose a enemigos desafiantes y descubriendo secretos ocultos."
   },
   {
     "id": 4,
@@ -29,7 +29,7 @@
     "genero": "Estrategia",
     "precio": 28000,
     "imagen": "http://localhost:5173/imagenes/ageofempires.gif",
-    "descripcion": "DISPONIBLE"
+    "descripcion": "DISPONIBLE - Age of Empires es un juego de estrategia en tiempo real que abarca diferentes períodos históricos. Los jugadores pueden construir civilizaciones, gestionar recursos y participar en batallas épicas."
   },
   {
     "id": 5,
@@ -37,6 +37,6 @@
     "genero": "Simulacion",
     "precio": 0,
     "imagen": "http://localhost:5173/imagenes/The%20Sims%20GIF.gif",
-    "descripcion": "DISPONIBLE"
+    "descripcion": "DISPONIBLE - The Sims 4 es un juego de simulación de vida donde los jugadores pueden crear y controlar personas en un mundo virtual. Personaliza sus hogares, establece relaciones y guía sus vidas en diversas direcciones."
   }
 ]

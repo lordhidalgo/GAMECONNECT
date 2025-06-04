@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Catálogo de Juegos</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: white;
+    }
+
+    .catalogo {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .catalogo h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background-color: #2c2c2c;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.3rem;
+    }
+
+    .card-content p {
+      margin: 5px 0 15px;
+      color: #bbbbbb;
+    }
+
+    .card-content button {
+      background-color: #ff6a00;
+      border: none;
+      padding: 10px 20px;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .card-content button:hover {
+      background-color: #e05c00;
+    }
+
+    /* Modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background-color: white;
+      color: black;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 500px;
+      width: 90%;
+      position: relative;
+    }
+
+    .modal-content h2 {
+      margin-top: 0;
+    }
+
+    .modal-content button.close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .modal-content p {
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="catalogo">
+    <h2>Catálogo de Juegos</h2>
+
+    <div class="grid">
+      <!-- Juego 1 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=Zelda" alt="Zelda">
+        <div class="card-content">
+          <h3>The Legend of Zelda</h3>
+          <p>Aventura - Nintendo Switch</p>
+          <button onclick="mostrarDetalles('The Legend of Zelda', 'Una épica aventura en un mundo abierto lleno de secretos.', '59.99', 'Nintendo Switch')">Ver más</button>
+        </div>
+      </div>
+
+      <!-- Juego 2 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=God+of+War" alt="God of War">
+        <div class="card-content">
+          <h3>God of War Ragnarok</h3>
+          <p>Acción - PS5</p>
+          <button onclick="mostrarDetalles('God of War Ragnarok', 'Kratos y Atreus enfrentan el destino en un mundo nórdico en guerra.', '69.99', 'PS5')">Ver más</button>
+        </div>
+      </div>
+
+      <!-- Juego 3 -->
+      <div class="card">
+        <img src="https://via.placeholder.com/400x250?text=FIFA+24" alt="FIFA 24">
+        <div class="card-content">
+          <h3>FIFA 24</h3>
+          <p>Deportes - PC</p>
+          <button onclick="mostrarDetalles('FIFA 24', 'El juego de fútbol más realista con nuevos modos y gráficos mejorados.', '49.99', 'PC')">Ver más</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="modalJuego">
+    <div class="modal-content">
+      <button class="close-btn" onclick="cerrarModal()">✖</button>
+      <h2 id="modalNombre"></h2>
+      <p id="modalDescripcion"></p>
+      <p><strong>Consola:</strong> <span id="modalConsola"></span></p>
+      <p><strong>Precio:</strong> $<span id="modalPrecio"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function mostrarDetalles(nombre, descripcion, precio, consola) {
+      document.getElementById('modalNombre').textContent = nombre;
+      document.getElementById('modalDescripcion').textContent = descripcion;
+      document.getElementById('modalPrecio').textContent = precio;
+      document.getElementById('modalConsola').textContent = consola;
+      document.getElementById('modalJuego').style.display = 'flex';
+    }
+
+    function cerrarModal() {
+      document.getElementById('modalJuego').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

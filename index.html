@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/src/assets/css/styleprincipal.css">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 <body>
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
@@ -64,7 +63,7 @@
                             Assassin's Creed es una saga de videojuegos de acción y aventura que te sumerge en historias de asesinos a lo largo de diferentes épocas históricas. Disponible para compra en múltiples plataformas, ofrece exploración en mundos abiertos, sigilo, combate y tramas intrigantes.
                         </div>
                         <div class="button">
-                            <button>VER MAS</button>
+                            <a href="/src/games.html"><button>VER MAS</button></a>
                         </div>
                     </div>
                 </div>
@@ -78,7 +77,7 @@
                             <p>Sumérgete en la acción intensa y la adrenalina pura con Call of Duty, el aclamado shooter que redefine la guerra moderna.</p>
                         </div>
                         <div class="button">
-                            <button>VER MAS</button>
+                            <a href="/src/games.html"><button>VER MAS</button></a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +91,7 @@
                             <p>Super Mario Galaxy es un juego de plataformas en 3D donde Mario viaja por planetas y galaxias en busca de estrellas.</p>
                         </div>
                         <div class="button">
-                            <button>VER MAS</button>
+                            <a href="/src/games.html"><button>VER MAS</button></a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +105,7 @@
                             <p>Álzate, Sinluz, y que la gracia te guíe para abrazar el poder del Círculo de Elden y encumbrarte como señor del Círculo en las Tierras Intermedias.</p>
                         </div>
                         <div class="button">
-                            <button>VER MAS</button>
+                            <a href="/src/games.html"><button>VER MAS</button></a>
                         </div>
                     </div>
                 </div>
@@ -249,6 +248,27 @@
         </div>
     </section>
 
+    <div id="game-detail-modal" class="modal-game-detail">
+    <div class="modal-content-detail">
+        <span class="close-detail-modal">&times;</span>
+        <div class="modal-body-game">
+            <img id="modal-game-image" src="" alt="Imagen del Juego" class="modal-game-image">
+            <div class="modal-game-info">
+                <h2 id="modal-game-name"></h2>
+                <p>Género: <span id="modal-game-genre"></span></p>
+                <p class="modal-game-price">Precio: <span id="modal-game-price"></span></p>
+                <div class="modal-description-box">
+                    <h3>Descripción:</h3>
+                    <p id="modal-game-description"></p>
+                </div>
+                <button id="add-to-cart-modal-btn" class="btn-agregar-carrito">
+                    Agregar al carrito
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
     <section id="rewards-section">
     <h2 data-aos="fade-right" class="ryp">
@@ -344,6 +364,8 @@
         </div>
     </div>
 
+    <div id="toast-container"></div>
+
     <script src="/src/js/searchform.js"></script>
     <script src="/src/js/slider.js"></script>
     <script src="/src/js/carrito.js"></script>
@@ -353,7 +375,6 @@
     <script src="/src/js/catalogo/index.js"></script>
      <script src="/src/js/recompensas/index.js"></script>
     <script src="/src/js/recompensas/index.js" type="module"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
     AOS.init();
     </script>
