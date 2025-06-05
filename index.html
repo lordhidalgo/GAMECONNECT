@@ -136,36 +136,47 @@
     <!-- -------------------------------------------------------------------------------------------------------------------- -->
 
     <section id="featured-news" class="featured-news">
-        <h2 data-aos="fade-right"><img src="imagenes/megaphone.png" alt="icono-noticias" class="title-icon"> Noticias Destacadas.</h2>
-        <div class="news-container">
-            <article class="news-card" data-aos="fade-up">
-                <img src="imagenes/starfield.gif" alt="Starfield lanzamiento">
-                <div class="news-content">
-                    <h3>Lanzamiento de Starfield 🚀</h3>
-                    <p>Explora el universo en uno de los juegos más esperados del año. Ya disponible en nuestra tienda.</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </article>
+    <h2 data-aos="fade-right"><img src="imagenes/megaphone.png" alt="icono-noticias" class="title-icon"> Noticias Destacadas.</h2>
+    <div class="news-container">
+        <article class="news-card" data-aos="fade-up">
+            <img src="imagenes/starfield.gif" alt="Starfield lanzamiento">
+            <div class="news-content">
+                <h3>Lanzamiento de Starfield 🚀</h3>
+                <p>Explora el universo en uno de los juegos más esperados del año. Ya disponible en nuestra tienda.</p>
+                <button class="btn-leer-mas-noticia" data-id="starfield">Leer más</button>
+            </div>
+        </article>
 
-            <article class="news-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="imagenes/zelda.gif" alt="Zelda Tears of the Kingdom">
-                <div class="news-content">
-                    <h3>Zelda: Tears of the Kingdom 🗡️</h3>
-                    <p>La nueva aventura de Link llega con mecánicas nunca antes vistas. ¡Descúbrelo ahora!</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </article>
+        <article class="news-card" data-aos="fade-up" data-aos-delay="200">
+            <img src="imagenes/zelda.gif" alt="Zelda Tears of the Kingdom">
+            <div class="news-content">
+                <h3>Zelda: Tears of the Kingdom 🗡️</h3>
+                <p>La nueva aventura de Link llega con mecánicas nunca antes vistas. ¡Descúbrelo ahora!</p>
+                <button class="btn-leer-mas-noticia" data-id="zelda">Leer más</button>
+            </div>
+        </article>
 
-            <article class="news-card" data-aos="fade-up" data-aos-delay="400">
-                <img src="imagenes/gta6.gif" alt="Rumores GTA VI">
-                <div class="news-content">
-                    <h3>GTA VI: Nuevos rumores 🔥</h3>
-                    <p>Analizamos los últimos rumores y filtraciones sobre el próximo título de Rockstar Games.</p>
-                    <a href="#">Leer más</a>
-                </div>
-            </article>
-        </div>
-    </section>
+        <article class="news-card" data-aos="fade-up" data-aos-delay="400">
+            <img src="imagenes/gta6.gif" alt="Rumores GTA VI">
+            <div class="news-content">
+                <h3>GTA VI: Nuevos rumores 🔥</h3>
+                <p>Analizamos los últimos rumores y filtraciones sobre el próximo título de Rockstar Games.</p>
+                <button class="btn-leer-mas-noticia" data-id="gta6">Leer más</button>
+            </div>
+        </article>
+    </div>
+</section>
+
+<div id="news-detail-modal" class="modal-news-detail">
+    <div class="modal-content-news">
+        <span class="close-news-modal">&times;</span>
+        <img id="modal-news-image" src="" alt="Imagen de Noticia">
+        <h2 id="modal-news-title"></h2>
+        <div id="modal-news-full-content"></div>
+    </div>
+</div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- -->
 
     <section id="catalog-section" class="catalogo">
         <h2 class="catalogo-titulo" data-aos="fade-right"><img src="imagenes/control2.png" alt="icono-catalogo" class="title-icon">Catalogo de Juegos.</h2>
@@ -247,6 +258,11 @@
             </div>
         </div>
     </section>
+    <section class="seccion-ver-todos-juegos">
+    <div class="contenedor-boton-ver-todos">
+        <a href="/src/games.html" class="btn-ver-todos-juegos">Ver todos los juegos</a>
+    </div>
+</section>
 
     <div id="game-detail-modal" class="modal-game-detail">
     <div class="modal-content-detail">
@@ -366,18 +382,20 @@
 
     <div id="toast-container"></div>
 
-    <script src="/src/js/searchform.js"></script>
-    <script src="/src/js/slider.js"></script>
-    <script src="/src/js/carrito.js"></script>
+    <script src="/src/js/searchform.js" defer></script>
+    <script src="/src/js/slider.js" defer></script>
+    <script src="/src/js/carrito.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="/src/js/aosinit.js"></script>
-    <script src="/src/js/supportform.js"></script>
-    <script src="/src/js/catalogo/index.js"></script>
-     <script src="/src/js/recompensas/index.js"></script>
-    <script src="/src/js/recompensas/index.js" type="module"></script>
+    <script src="/src/js/aosinit.js" defer></script>
     <script>
-    AOS.init();
+        AOS.init();
     </script>
+    
+    <script src="/src/js/supportform.js" defer></script>
+    
+    <script src="/src/js/catalogo/index.js" type="module" defer></script>
+    <script src="/src/js/recompensas/index.js" type="module" defer></script>
+    <script src="/src/js/noticias/index.js" type="module" defer></script>
 
 </body>
 </html>
