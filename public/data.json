@@ -5,7 +5,8 @@
     "genero": "Aventura",
     "precio": 80000,
     "imagen": "http://localhost:5173/imagenes/seaofthieves.gif",
-    "descripcion": "DISPONIBLE - Explora un vasto mundo abierto repleto de islas vírgenes, navíos hundidos y misteriosos artefactos. Parte en pos de tesoros perdidos, enfréntate a capitanes esqueleto y custodia valiosos cargamentos de compañías comerciales. Además, ¡puedes darte a la pesca y la caza o volcarte en los cientos de objetivos secundarios!"
+    "descripcion": "DISPONIBLE - Explora un vasto mundo abierto repleto de islas vírgenes, navíos hundidos y misteriosos artefactos. Parte en pos de tesoros perdidos, enfréntate a capitanes esqueleto y custodia valiosos cargamentos de compañías comerciales. Además, ¡puedes darte a la pesca y la caza o volcarte en los cientos de objetivos secundarios!",
+    "displayLocations": ["catalog"]
   },
   {
     "id": 2,
@@ -13,7 +14,8 @@
     "genero": "Shooter",
     "precio": 0,
     "imagen": "http://localhost:5173/imagenes/valorant.gif",
-    "descripcion": "DISPONIBLE - Valorant es un juego de disparos en primera persona basado en equipos, donde los jugadores asumen el papel de agentes con habilidades únicas. La estrategia y la colaboración son clave para ganar partidas."
+    "descripcion": "DISPONIBLE - Valorant es un juego de disparos en primera persona basado en equipos, donde los jugadores asumen el papel de agentes con habilidades únicas. La estrategia y la colaboración son clave para ganar partidas.",
+    "displayLocations": ["catalog"]
   },
   {
     "id": 3,
@@ -21,7 +23,8 @@
     "genero": "RPG",
     "precio": 200000,
     "imagen": "http://localhost:5173/imagenes/eldenring.gif",
-    "descripcion": "DISPONIBLE - Elden Ring es un juego de rol de acción desarrollado por FromSoftware. Los jugadores exploran un mundo abierto lleno de peligros, enfrentándose a enemigos desafiantes y descubriendo secretos ocultos."
+    "descripcion": "DISPONIBLE - Elden Ring es un juego de rol de acción desarrollado por FromSoftware. Los jugadores exploran un mundo abierto lleno de peligros, enfrentándose a enemigos desafiantes y descubriendo secretos ocultos.",
+    "displayLocations": ["slider, catalog"]
   },
   {
     "id": 4,
@@ -29,7 +32,8 @@
     "genero": "Estrategia",
     "precio": 28000,
     "imagen": "http://localhost:5173/imagenes/ageofempires.gif",
-    "descripcion": "DISPONIBLE - Age of Empires es un juego de estrategia en tiempo real que abarca diferentes períodos históricos. Los jugadores pueden construir civilizaciones, gestionar recursos y participar en batallas épicas."
+    "descripcion": "DISPONIBLE - Age of Empires es un juego de estrategia en tiempo real que abarca diferentes períodos históricos. Los jugadores pueden construir civilizaciones, gestionar recursos y participar en batallas épicas.",
+    "displayLocations": ["catalog"]
   },
   {
     "id": 5,
@@ -37,6 +41,34 @@
     "genero": "Simulacion",
     "precio": 0,
     "imagen": "http://localhost:5173/imagenes/The%20Sims%20GIF.gif",
-    "descripcion": "DISPONIBLE - The Sims 4 es un juego de simulación de vida donde los jugadores pueden crear y controlar personas en un mundo virtual. Personaliza sus hogares, establece relaciones y guía sus vidas en diversas direcciones."
+    "descripcion": "DISPONIBLE - The Sims 4 es un juego de simulación de vida donde los jugadores pueden crear y controlar personas en un mundo virtual. Personaliza sus hogares, establece relaciones y guía sus vidas en diversas direcciones.",
+    "displayLocations": ["catalog"]
+  },
+  {
+    "id":6,
+    "nombre": "Assassin's Creed Valhalla",
+    "genero": "Acción/Aventura",
+    "precio": 200000,
+    "imagen": "/imagenes/Assassin's Creed.gif",
+    "descripcion": "DISPONIBLE - Assassin's Creed Valhalla te lleva a la era de los vikingos, donde jugarás como Eivor, un guerrero que busca establecer un nuevo hogar en Inglaterra. Explora un mundo abierto lleno de aventuras, combate y decisiones que afectan la historia.",
+    "displayLocations": ["slider"]
+  },
+  {
+    "id":7,
+    "nombre": "Call of Duty: Warzone",
+    "genero": "Shooter",
+    "precio": 0,
+    "imagen": "/imagenes/cofg.gif",
+    "descripcion": "DISPONIBLE - Call of Duty: Warzone es un juego de disparos en primera persona que combina la jugabilidad clásica de la serie con un modo battle royale masivo. Lucha por la supervivencia en un mapa en constante cambio y utiliza tácticas de equipo para vencer a tus oponentes.",
+    "displayLocations": ["slider"]
+  },
+  {
+    "id":8,
+    "nombre": "Super Mario Odyssey",
+    "genero": "Plataformas",
+    "precio": 200000,
+    "imagen": "/imagenes/supermario.gif",
+    "descripcion": "DISPONIBLE - Super Mario Odyssey es un juego de plataformas en 3D donde Mario viaja por mundos diversos para rescatar a la Princesa Peach de Bowser.",
+    "displayLocations": ["slider"]
   }
 ]
