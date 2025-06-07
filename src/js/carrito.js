@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const cartIcon = document.getElementById('modal'); // Icono del carrito para abrir el modal
+    const cartIcon = document.getElementById('modal'); // Icono del carrito para abrir el modal (en juegos.html)
     const modal = document.getElementById('cart-modal'); // El modal del carrito
-    const closeBtn = document.querySelector('.close'); // Botón de cerrar del modal
+    const closeBtn = document.querySelector('#cart-modal .close'); // Botón de cerrar del modal (más específico)
     const cartItemsContainer = document.getElementById('cart-items'); // Contenedor de elementos del carrito
     const totalAmount = document.getElementById('total-amount'); // Elemento para mostrar el total
+    // Nuevo: Elemento para el contador del icono del carrito
+    const cartCountElement = document.getElementById('cartCount');
+
 
     let cart = JSON.parse(localStorage.getItem('cart')) || []; // Cargar carrito desde localStorage
 
@@ -74,14 +77,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Manejar clics en botones 'Eliminar' (dentro del carrito)
         if (event.target.classList.contains('btn-eliminar')) {
-            // Aquí usamos el data-id para eliminar el item completo, no el índice.
-            // Esto es más robusto si el orden del carrito cambia.
             const idToRemove = event.target.getAttribute('data-id');
-            const itemToRemoveName = cart.find(item => item.id === idToRemove)?.nombre; // Obtener el nombre antes de eliminar
+            const itemToRemoveName = cart.find(item => item.id === idToRemove)?.nombre;
 
-            // Filtramos el carrito para crear uno nuevo sin el item a eliminar
-            // Si quieres que el botón "Eliminar" solo decremente la cantidad, la lógica cambia.
-            // Por ahora, elimina todas las instancias de ese item.
             const originalLength = cart.length;
             cart = cart.filter(item => item.id !== idToRemove);
 
@@ -91,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 updateCart(); // Actualizar la interfaz del carrito
                 showToastNotification(`"${itemToRemoveName}" eliminado del carrito.`);
             } else {
-                 console.warn(`No se encontró el elemento con ID ${idToRemove} para eliminar.`);
+                console.warn(`No se encontró el elemento con ID ${idToRemove} para eliminar.`);
             }
         }
     });
@@ -101,12 +99,12 @@ document.addEventListener('DOMContentLoaded', function() {
     function updateCart() {
         cartItemsContainer.innerHTML = ''; // Limpiar el contenido actual del carrito
         let total = 0;
+        let totalItemsInCart = 0; // Para el contador del icono
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart-message">El carrito está vacío.</p>';
         } else {
-            cart.forEach((item) => { // Ya no necesitamos el 'index' si eliminamos por 'id'
-                // Asegúrate de que 'quantity' y 'totalPrice' existan (para items cargados de localStorage antiguos)
+            cart.forEach((item) => {
                 item.quantity = item.quantity || 1;
                 item.totalPrice = item.totalPrice || (item.precio * item.quantity);
 
@@ -117,10 +115,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     <button class="btn-eliminar" data-id="${item.id}">Eliminar</button>
                 `;
                 cartItemsContainer.appendChild(itemElement);
-                total += item.totalPrice; // Sumamos el totalPrice del item
+                total += item.totalPrice;
+                totalItemsInCart += item.quantity; // Sumar la cantidad para el contador
             });
 
-            // Añadir botón "Comprar" si hay elementos en el carrito
             const buyButton = document.createElement('button');
             buyButton.className = 'btn-comprar';
             buyButton.textContent = 'Comprar';
@@ -130,7 +128,11 @@ document.addEventListener('DOMContentLoaded', function() {
             cartItemsContainer.appendChild(buyButton);
         }
 
-        totalAmount.textContent = total.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 2}); // Actualizar el total del carrito
+        totalAmount.textContent = total.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 2});
+        // Actualizar el contador del icono del carrito
+        if (cartCountElement) {
+            cartCountElement.textContent = totalItemsInCart;
+        }
     }
 
     // --- Función para mostrar Notificaciones Toast (NUEVA) ---
@@ -143,24 +145,21 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const toast = document.createElement('div');
         toast.classList.add('toast-notification');
-        toast.innerHTML = `<span class="toast-icon">&#10003;</span> ${message}`; // Icono de checkmark
+        toast.innerHTML = `<span class="toast-icon">&#10003;</span> ${message}`;
 
         toastContainer.appendChild(toast);
 
-        // Muestra la notificación
         setTimeout(() => {
             toast.classList.add('show');
-        }, 100); // Pequeño retraso para que la transición CSS funcione
+        }, 100);
 
-        // Oculta y elimina la notificación después de 'duration'
         setTimeout(() => {
             toast.classList.remove('show');
             toast.addEventListener('transitionend', () => {
                 toast.remove();
-            }, { once: true }); // Elimina el listener después de una vez
+            }, { once: true });
         }, duration);
     }
-
 
     // Inicializar el carrito al cargar la página por primera vez
     updateCart();

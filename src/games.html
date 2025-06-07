@@ -1,184 +1,647 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Todos nuestros juegos.</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: white;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todos nuestros juegos - GameConnect</title>
+    <style>
+        :root {
+            --bg-dark: #06141B;
+            --card-bg: #1A2A33;
+            --accent-color: #00BFFF;
+            --text-light: #fefefe;
+            --text-muted: #bbbbbb;
+            --shadow-color: rgba(0, 0, 0, 0.7);
+            --modal-overlay: rgba(0, 0, 0, 0.9);
+            --modal-content-bg: #22303D;
+        }
 
-    .catalogo {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-    .catalogo h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      margin-bottom: 40px;
-    }
+        main {
+            padding: 20px 0;
+        }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 30px;
-    }
+        header {
+            background-color: black;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.164);
+        }
 
-    .card {
-      background-color: #2c2c2c;
-      border-radius: 12px;
-      overflow: hidden;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-      transition: transform 0.2s;
-    }
+        header h1 {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 2.8rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+        }
 
-    .card:hover {
-      transform: scale(1.02);
-    }
+        header nav {
+            margin-top: 15px;
+        }
 
-    .card img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
-    }
+        header nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
 
-    .card-content {
-      padding: 16px;
-    }
+        header nav a:hover {
+            color: var(--accent-color);
+            transform: translateY(-2px);
+        }
 
-    .card-content h3 {
-      margin: 0;
-      font-size: 1.3rem;
-    }
+        .catalogo {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: auto;
+            text-align: center;
+        }
 
-    .card-content p {
-      margin: 5px 0 15px;
-      color: #bbbbbb;
-    }
+        .catalogo h2 {
+            font-size: 3.5rem;
+            margin-bottom: 60px;
+            color: var(--text-light);
+            text-shadow: 0 4px 10px var(--shadow-color);
+            letter-spacing: 1.5px;
+            position: relative;
+            display: inline-block;
+        }
 
-    .card-content button {
-      background-color: #ff6a00;
-      border: none;
-      padding: 10px 20px;
-      color: white;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.2s;
-    }
+        .catalogo h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
 
-    .card-content button:hover {
-      background-color: #e05c00;
-    }
+        .filtros-busqueda {
+            margin-bottom: 50px;
+        }
 
-    /* Modal */
-    .modal {
-      position: fixed;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.75);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-    }
+        .filtros-busqueda input[type="text"] {
+            width: 100%;
+            max-width: 600px;
+            padding: 18px 25px;
+            border-radius: 40px;
+            border: 2px solid #3A4C5A;
+            background-color: #1A2A33;
+            color: var(--text-light);
+            font-size: 1.2em;
+            outline: none;
+            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.6);
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
 
-    .modal-content {
-      background-color: white;
-      color: black;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      width: 90%;
-      position: relative;
-    }
+        .filtros-busqueda input[type="text"]::placeholder {
+            color: #888;
+        }
 
-    .modal-content h2 {
-      margin-top: 0;
-    }
+        .filtros-busqueda input[type="text"]:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+        }
 
-    .modal-content button.close-btn {
-      position: absolute;
-      top: 10px;
-      right: 15px;
-      font-size: 1.5rem;
-      background: none;
-      border: none;
-      cursor: pointer;
-      color: #333;
-    }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 40px;
+            padding-bottom: 40px;
+        }
 
-    .modal-content p {
-      margin-bottom: 10px;
-    }
-  </style>
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #2a3d4d;
+        }
+
+        .card:hover {
+            transform: translateY(-10px) rotateZ(1deg);
+            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 106, 0, 0.2);
+        }
+
+        .card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 4px solid var(--accent-color);
+        }
+
+        .card-content {
+            padding: 25px;
+            text-align: center;
+        }
+
+        .card-content h3 {
+            margin: 0 0 12px 0;
+            font-size: 1.6rem;
+            color: var(--text-light);
+            line-height: 1.2;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-content p {
+            margin: 8px 0 25px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.4;
+        }
+
+        .btn-ver-mas-juego {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 1.05em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-ver-mas-juego:hover {
+            background-color: #1f618d;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-ver-mas-juego:active {
+            background-color: #1f618d;
+            transform: translateY(0);
+            box-shadow: none;
+        }
+
+        .card-content button {
+            background-color: var(--accent-color);
+            border: none;
+            padding: 14px 30px;
+            color: white;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            font-size: 1.05em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .card-content button:hover {
+            background-color: #1f618d;
+        }
+
+        .modal {
+            position: fixed;
+            inset: 0;
+            background-color: var(--modal-overlay);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeInOverlay 0.3s ease-out;
+        }
+
+        @keyframes fadeInOverlay {
+            from {
+                background-color: rgba(0, 0, 0, 0);
+            }
+            to {
+                background-color: var(--modal-overlay);
+            }
+        }
+
+        .modal-content {
+            background-color: var(--modal-content-bg);
+            color: var(--text-light);
+            padding: 40px;
+            border-radius: 18px;
+            max-width: 650px;
+            width: 90%;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 0 2px var(--accent-color);
+            animation: modalPopIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+            text-align: left;
+        }
+
+        @keyframes modalPopIn {
+            from {
+                transform: scale(0.7) translateY(-100px);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1) translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-content h2 {
+            margin-top: 0;
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 25px;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .modal-content button.close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2.2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #aaa;
+            transition: color 0.3s ease, transform 0.2s ease;
+        }
+
+        .modal-content button.close-btn:hover {
+            color: var(--text-light);
+            transform: rotate(90deg);
+        }
+
+        .modal-content p {
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            color: var(--text-muted);
+        }
+
+        .modal-content p strong {
+            color: var(--accent-color);
+        }
+
+        .loading-message,
+        .no-games-found {
+            text-align: center;
+            font-size: 1.4em;
+            color: var(--text-muted);
+            padding: 100px 0;
+            font-weight: bold;
+        }
+
+        .error-message {
+            color: #ff4d4d;
+        }
+
+        footer {
+            background-color: black;
+            padding: 30px 20px;
+            text-align: center;
+            margin-top: 80px;
+            box-shadow: 0 -4px 15px rgba(255, 255, 255, 0.199);
+        }
+
+        footer p {
+            margin: 0;
+            color: var(--text-light);
+            font-size: 0.95em;
+            line-height: 1.5;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--text-light);
+        }
+
+        @media (max-width: 992px) {
+            .catalogo h2 {
+                font-size: 3rem;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 30px;
+            }
+            .card img {
+                height: 180px;
+            }
+            .card-content h3 {
+                font-size: 1.4rem;
+            }
+            .modal-content {
+                max-width: 550px;
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2rem;
+            }
+            header nav a {
+                margin: 0 10px;
+                font-size: 1em;
+            }
+            .catalogo {
+                padding: 40px 15px;
+            }
+            .catalogo h2 {
+                font-size: 2.5rem;
+                margin-bottom: 40px;
+            }
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 25px;
+            }
+            .card img {
+                height: 160px;
+            }
+            .card-content {
+                padding: 20px;
+            }
+            .card-content h3 {
+                font-size: 1.2rem;
+            }
+            .modal-content {
+                max-width: 90%;
+                padding: 25px;
+            }
+            .modal-content h2 {
+                font-size: 2rem;
+            }
+            .modal-content button.close-btn {
+                font-size: 1.8rem;
+                top: 10px;
+                right: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 15px 0;
+            }
+            header h1 {
+                font-size: 2rem;
+            }
+            header nav {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            header nav a {
+                margin: 5px 0;
+            }
+            .catalogo {
+                padding: 30px 10px;
+            }
+            .catalogo h2 {
+                font-size: 2rem;
+                margin-bottom: 30px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            .card img {
+                height: 200px;
+            }
+            .card-content {
+                padding: 15px;
+            }
+            .card-content h3 {
+                font-size: 1.4rem;
+            }
+            .filtros-busqueda input[type="text"] {
+                padding: 15px;
+                font-size: 1em;
+            }
+            .modal-content {
+                padding: 20px;
+            }
+            .modal-content h2 {
+                font-size: 1.6rem;
+            }
+            .modal-content p {
+                font-size: 1em;
+            }
+        }
+    </style>
 </head>
 <body>
-
-  <section class="catalogo">
-    <h2>Aqui podras encontrar todos nuestros juegos.</h2>
-
-    <div class="grid">
-      <!-- Juego 1 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250?text=Zelda" alt="Zelda">
-        <div class="card-content">
-          <h3>The Legend of Zelda</h3>
-          <p>Aventura - Nintendo Switch</p>
-          <button onclick="mostrarDetalles('The Legend of Zelda', 'Una épica aventura en un mundo abierto lleno de secretos.', '59.99', 'Nintendo Switch')">Ver más</button>
+    <header>
+        <div class="logo">
+            <img src="/public/imagenes/logo-2078018_1280.png" alt="GameConnect Logo" style="height: 50px; width: auto;">
         </div>
-      </div>
+        <h1>GameConnect</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="#" style="color: var(--accent-color);">Juegos</a>
+        </nav>
+    </header>
 
-      <!-- Juego 2 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250?text=God+of+War" alt="God of War">
-        <div class="card-content">
-          <h3>God of War Ragnarok</h3>
-          <p>Acción - PS5</p>
-          <button onclick="mostrarDetalles('God of War Ragnarok', 'Kratos y Atreus enfrentan el destino en un mundo nórdico en guerra.', '69.99', 'PS5')">Ver más</button>
+    <main>
+        <section class="catalogo">
+            <h2>Aquí podrás encontrar todos nuestros juegos.</h2>
+            <div class="filtros-busqueda">
+                <input type="text" id="searchInput" placeholder="Buscar juego por nombre, género o consola...">
+            </div>
+            <div class="grid" id="todosJuegosGrid">
+                <div class="card">
+                    <img src="/public/imagenes/zeldaimg.avif" alt="Zelda">
+                    <div class="card-content">
+                        <h3>The Legend of Zelda</h3>
+                        <p>Aventura - Nintendo Switch</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Legend of Zelda', 'Una épica aventura en un mundo abierto lleno de secretos.', '59.99', 'Nintendo Switch')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/godofwar.jpg" alt="God of War">
+                    <div class="card-content">
+                        <h3>God of War Ragnarok</h3>
+                        <p>Acción - PS5</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('God of War Ragnarok', 'Kratos y Atreus enfrentan el destino en un mundo nórdico en guerra.', '69.99', 'PS5')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/fifa.avif" alt="FIFA 24">
+                    <div class="card-content">
+                        <h3>Fc 25</h3>
+                        <p>Deportes - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fc 25', 'El juego de fútbol más realista con nuevos modos y gráficos mejorados.', '49.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/forza5.avif" alt="Forza Horizon 5">
+                    <div class="card-content">
+                        <h3>Forza Horizon 5</h3>
+                        <p>Conducción - Xbox Series X</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Forza Horizon 5', 'Explora un mundo abierto en México con cientos de coches.', '59.99', 'Xbox Series X')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/minecraft.webp" alt="Minecraft">
+                    <div class="card-content">
+                        <h3>Minecraft</h3>
+                        <p>Aventura - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Minecraft', 'Construye y explora mundos infinitos en este juego de bloques.', '26.95', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/forniteimg.jpg" alt="Fortnite">
+                    <div class="card-content">
+                        <h3>Fortnite</h3>
+                        <p>Battle Royale - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fortnite', 'Sobrevive y construye en el popular juego de batalla real.', '0.00', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/cof.avif" alt="Call of Duty: Warzone">
+                    <div class="card-content">
+                        <h3>Call of Duty: Warzone</h3>
+                        <p>Acción - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Call of Duty: Warzone', 'Forma equipo o vuela en solitario por entornos enormes; sé el último escuadrón en pie para ganar.', '0.00', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/Assassins-creed-logo.webp" alt="Assassin's Creed Valhalla">
+                    <div class="card-content">
+                        <h3>Assassin's Creed Valhalla</h3>
+                        <p>Acción - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Assassin\'s Creed Valhalla', 'Vive la historia de un vikingo en este emocionante juego de acción y aventura.', '59.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/Sea_of_Thieves_cover_art.webp" alt="Sea of Thieves">
+                    <div class="card-content">
+                        <h3>Sea of Thieves</h3>
+                        <p>Multijugador - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Sea of Thieves', 'Únete a la aventura pirata en este juego multijugador en línea.', '0.00', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/Valorant_Logo.png" alt="Valorant">
+                    <div class="card-content">
+                        <h3>Valorant</h3>
+                        <p>Acción - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Valorant', 'En este juego, los jugadores toman el control de agentes, personajes que representan diversas culturas y nacionalidades de todo el mundo.', '59.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/Age-of-Empires-II-Definitive-Edition-imagen.webp" alt="Age of Empires II: Definitive Edition">
+                    <div class="card-content">
+                        <h3>Age of Empires II: Definitive Edition</h3>
+                        <p>Estrategia - PC</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Age of Empires II: Definitive Edition', 'Revive la clásica saga de estrategia en tiempo real con gráficos mejorados y nuevas civilizaciones.', '29.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/thesims4img.jpg" alt="The Sims 4">
+                    <div class="card-content">
+                        <h3>The Sims 4</h3>
+                        <p>Simulación - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Sims 4', 'Crea y controla personas en un mundo virtual en este popular juego de simulación.', '39.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/supermarioimg.png" alt="Super Mario Odyssey">
+                    <div class="card-content">
+                        <h3>Super Mario Odyssey</h3>
+                        <p>Plataformas - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Super Mario Odyssey', 'Acompaña a Mario en una aventura por diversos mundos para rescatar a la Princesa Peach.', '59.99', 'Consolas')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/starfieldimg.jpg" alt="Starfield">
+                    <div class="card-content">
+                        <h3>Starfield</h3>
+                        <p>RPG - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Starfield', 'Explora el vasto universo en este esperado RPG de ciencia ficción.', '69.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="/public/imagenes/eldenringimg.webp" alt="Elden Ring">
+                    <div class="card-content">
+                        <h3>Elden Ring</h3>
+                        <p>RPG - PC - Consolas</p>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Elden Ring', 'Adéntrate en un mundo de fantasía en este aclamado RPG de acción.', '69.99', 'PC')">Ver más</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="modal" id="modalJuego">
+            <div class="modal-content">
+                <button class="close-btn" onclick="cerrarModal()">&times;</button>
+                <h2 id="modalNombre"></h2>
+                <p id="modalDescripcion"></p>
+                <p><strong>Precio:</strong> $<span id="modalPrecio"></span></p>
+                <p><strong>Consola:</strong> <span id="modalConsola"></span></p>
+            </div>
         </div>
-      </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 GameConnect. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function mostrarDetalles(nombre, descripcion, precio, consola) {
+            document.getElementById('modalNombre').textContent = nombre;
+            document.getElementById('modalDescripcion').textContent = descripcion;
+            document.getElementById('modalPrecio').textContent = precio;
+            document.getElementById('modalConsola').textContent = consola;
+            document.getElementById('modalJuego').style.display = 'flex';
+        }
 
-      <!-- Juego 3 -->
-      <div class="card">
-        <img src="https://via.placeholder.com/400x250?text=FIFA+24" alt="FIFA 24">
-        <div class="card-content">
-          <h3>FIFA 24</h3>
-          <p>Deportes - PC</p>
-          <button onclick="mostrarDetalles('FIFA 24', 'El juego de fútbol más realista con nuevos modos y gráficos mejorados.', '49.99', 'PC')">Ver más</button>
-        </div>
-      </div>
-    </div>
-  </section>
+        function cerrarModal() {
+            document.getElementById('modalJuego').style.display = 'none';
+        }
 
-  <!-- Modal -->
-  <div class="modal" id="modalJuego">
-    <div class="modal-content">
-      <button class="close-btn" onclick="cerrarModal()">✖</button>
-      <h2 id="modalNombre"></h2>
-      <p id="modalDescripcion"></p>
-      <p><strong>Consola:</strong> <span id="modalConsola"></span></p>
-      <p><strong>Precio:</strong> $<span id="modalPrecio"></span></p>
-    </div>
-  </div>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const gameCards = document.querySelectorAll('#todosJuegosGrid .card');
 
-  <script>
-    function mostrarDetalles(nombre, descripcion, precio, consola) {
-      document.getElementById('modalNombre').textContent = nombre;
-      document.getElementById('modalDescripcion').textContent = descripcion;
-      document.getElementById('modalPrecio').textContent = precio;
-      document.getElementById('modalConsola').textContent = consola;
-      document.getElementById('modalJuego').style.display = 'flex';
-    }
+            if (searchInput) {
+                searchInput.addEventListener('input', (event) => {
+                    const searchTerm = event.target.value.toLowerCase();
 
-    function cerrarModal() {
-      document.getElementById('modalJuego').style.display = 'none';
-    }
-  </script>
+                    gameCards.forEach(card => {
+                        const title = card.querySelector('h3').textContent.toLowerCase();
+                        const description = card.querySelector('p').textContent.toLowerCase();
 
+                        if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                            card.style.display = '';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            }
+
+            const modalJuego = document.getElementById('modalJuego');
+            if (modalJuego) {
+                modalJuego.addEventListener('click', (event) => {
+                    if (event.target === modalJuego) {
+                        cerrarModal();
+                    }
+                });
+            }
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && modalJuego.style.display === 'flex') {
+                    cerrarModal();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
