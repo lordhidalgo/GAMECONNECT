@@ -4,440 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todos nuestros juegos - GameConnect</title>
-    <style>
-        :root {
-            --bg-dark: #06141B;
-            --card-bg: #1A2A33;
-            --accent-color: #00BFFF;
-            --text-light: #fefefe;
-            --text-muted: #bbbbbb;
-            --shadow-color: rgba(0, 0, 0, 0.7);
-            --modal-overlay: rgba(0, 0, 0, 0.9);
-            --modal-content-bg: #22303D;
-        }
-
-        body {
-            margin: 0;
-            font-family: 'Arial', sans-serif;
-            background-color: var(--bg-dark);
-            color: var(--text-light);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
-        }
-
-        main {
-            padding: 20px 0;
-        }
-
-        header {
-            background-color: black;
-            padding: 20px 0;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.164);
-        }
-
-        header h1 {
-            margin: 0;
-            color: var(--text-light);
-            font-size: 2.8rem;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-        }
-
-        header nav {
-            margin-top: 15px;
-        }
-
-        header nav a {
-            color: var(--text-light);
-            text-decoration: none;
-            margin: 0 20px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-
-        header nav a:hover {
-            color: var(--accent-color);
-            transform: translateY(-2px);
-        }
-
-        .catalogo {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: auto;
-            text-align: center;
-        }
-
-        .catalogo h2 {
-            font-size: 3.5rem;
-            margin-bottom: 60px;
-            color: var(--text-light);
-            text-shadow: 0 4px 10px var(--shadow-color);
-            letter-spacing: 1.5px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .catalogo h2::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background-color: var(--accent-color);
-            margin: 20px auto 0;
-            border-radius: 2px;
-        }
-
-        .filtros-busqueda {
-            margin-bottom: 50px;
-        }
-
-        .filtros-busqueda input[type="text"] {
-            width: 100%;
-            max-width: 600px;
-            padding: 18px 25px;
-            border-radius: 40px;
-            border: 2px solid #3A4C5A;
-            background-color: #1A2A33;
-            color: var(--text-light);
-            font-size: 1.2em;
-            outline: none;
-            box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.6);
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .filtros-busqueda input[type="text"]::placeholder {
-            color: #888;
-        }
-
-        .filtros-busqueda input[type="text"]:focus {
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 40px;
-            padding-bottom: 40px;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px var(--shadow-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid #2a3d4d;
-        }
-
-        .card:hover {
-            transform: translateY(-10px) rotateZ(1deg);
-            box-shadow: 0 15px 30px rgba(255, 255, 255, 0.4), 0 0 40px rgba(255, 106, 0, 0.2);
-        }
-
-        .card img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-bottom: 4px solid var(--accent-color);
-        }
-
-        .card-content {
-            padding: 25px;
-            text-align: center;
-        }
-
-        .card-content h3 {
-            margin: 0 0 12px 0;
-            font-size: 1.6rem;
-            color: var(--text-light);
-            line-height: 1.2;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-        }
-
-        .card-content p {
-            margin: 8px 0 25px;
-            color: var(--text-muted);
-            font-size: 1rem;
-            line-height: 1.4;
-        }
-
-        .btn-ver-mas-juego {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 14px 30px;
-            border: none;
-            border-radius: 30px;
-            cursor: pointer;
-            font-size: 1.05em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-        }
-
-        .btn-ver-mas-juego:hover {
-            background-color: #1f618d;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
-        }
-
-        .btn-ver-mas-juego:active {
-            background-color: #1f618d;
-            transform: translateY(0);
-            box-shadow: none;
-        }
-
-        .card-content button {
-            background-color: var(--accent-color);
-            border: none;
-            padding: 14px 30px;
-            color: white;
-            border-radius: 30px;
-            cursor: pointer;
-            transition: background-color 0.2s;
-            font-size: 1.05em;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-        }
-
-        .card-content button:hover {
-            background-color: #1f618d;
-        }
-
-        .modal {
-            position: fixed;
-            inset: 0;
-            background-color: var(--modal-overlay);
-            display: none;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            animation: fadeInOverlay 0.3s ease-out;
-        }
-
-        @keyframes fadeInOverlay {
-            from {
-                background-color: rgba(0, 0, 0, 0);
-            }
-            to {
-                background-color: var(--modal-overlay);
-            }
-        }
-
-        .modal-content {
-            background-color: var(--modal-content-bg);
-            color: var(--text-light);
-            padding: 40px;
-            border-radius: 18px;
-            max-width: 650px;
-            width: 90%;
-            position: relative;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 0 2px var(--accent-color);
-            animation: modalPopIn 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-            text-align: left;
-        }
-
-        @keyframes modalPopIn {
-            from {
-                transform: scale(0.7) translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1) translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .modal-content h2 {
-            margin-top: 0;
-            font-size: 2.5rem;
-            color: var(--accent-color);
-            text-align: center;
-            margin-bottom: 25px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        .modal-content button.close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 2.2rem;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #aaa;
-            transition: color 0.3s ease, transform 0.2s ease;
-        }
-
-        .modal-content button.close-btn:hover {
-            color: var(--text-light);
-            transform: rotate(90deg);
-        }
-
-        .modal-content p {
-            margin-bottom: 12px;
-            font-size: 1.1em;
-            color: var(--text-muted);
-        }
-
-        .modal-content p strong {
-            color: var(--accent-color);
-        }
-
-        .loading-message,
-        .no-games-found {
-            text-align: center;
-            font-size: 1.4em;
-            color: var(--text-muted);
-            padding: 100px 0;
-            font-weight: bold;
-        }
-
-        .error-message {
-            color: #ff4d4d;
-        }
-
-        footer {
-            background-color: black;
-            padding: 30px 20px;
-            text-align: center;
-            margin-top: 80px;
-            box-shadow: 0 -4px 15px rgba(255, 255, 255, 0.199);
-        }
-
-        footer p {
-            margin: 0;
-            color: var(--text-light);
-            font-size: 0.95em;
-            line-height: 1.5;
-        }
-
-        footer a {
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer a:hover {
-            color: var(--text-light);
-        }
-
-        @media (max-width: 992px) {
-            .catalogo h2 {
-                font-size: 3rem;
-            }
-            .grid {
-                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-                gap: 30px;
-            }
-            .card img {
-                height: 180px;
-            }
-            .card-content h3 {
-                font-size: 1.4rem;
-            }
-            .modal-content {
-                max-width: 550px;
-                padding: 30px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2rem;
-            }
-            header nav a {
-                margin: 0 10px;
-                font-size: 1em;
-            }
-            .catalogo {
-                padding: 40px 15px;
-            }
-            .catalogo h2 {
-                font-size: 2.5rem;
-                margin-bottom: 40px;
-            }
-            .grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 25px;
-            }
-            .card img {
-                height: 160px;
-            }
-            .card-content {
-                padding: 20px;
-            }
-            .card-content h3 {
-                font-size: 1.2rem;
-            }
-            .modal-content {
-                max-width: 90%;
-                padding: 25px;
-            }
-            .modal-content h2 {
-                font-size: 2rem;
-            }
-            .modal-content button.close-btn {
-                font-size: 1.8rem;
-                top: 10px;
-                right: 15px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 15px 0;
-            }
-            header h1 {
-                font-size: 2rem;
-            }
-            header nav {
-                flex-direction: column;
-                margin-top: 10px;
-            }
-            header nav a {
-                margin: 5px 0;
-            }
-            .catalogo {
-                padding: 30px 10px;
-            }
-            .catalogo h2 {
-                font-size: 2rem;
-                margin-bottom: 30px;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .card img {
-                height: 200px;
-            }
-            .card-content {
-                padding: 15px;
-            }
-            .card-content h3 {
-                font-size: 1.4rem;
-            }
-            .filtros-busqueda input[type="text"] {
-                padding: 15px;
-                font-size: 1em;
-            }
-            .modal-content {
-                padding: 20px;
-            }
-            .modal-content h2 {
-                font-size: 1.6rem;
-            }
-            .modal-content p {
-                font-size: 1em;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="/src/assets/css/games.css">
 </head>
 <body>
     <header>
@@ -448,22 +15,29 @@
         <nav>
             <a href="index.html">Inicio</a>
             <a href="#" style="color: var(--accent-color);">Juegos</a>
+            <form class="search-form-header" style="display:inline;">
+                <input type="text" id="searchInput" placeholder="Buscar un juego">
+            </form>
+            <button id="btn-ver-carrito" class="icono-carrito" style="background: none; border: none; cursor: pointer; position: relative;">
+                <img src="/imagenes/shopping-cart-1105049_1280.png" alt="Carrito de compras" width="40" height="40">
+                <span id="cart-count">0</span>
+            </button>
         </nav>
     </header>
 
     <main>
         <section class="catalogo">
             <h2>Aquí podrás encontrar todos nuestros juegos.</h2>
-            <div class="filtros-busqueda">
-                <input type="text" id="searchInput" placeholder="Buscar juego por nombre, género o consola...">
-            </div>
             <div class="grid" id="todosJuegosGrid">
                 <div class="card">
                     <img src="/public/imagenes/zeldaimg.avif" alt="Zelda">
                     <div class="card-content">
                         <h3>The Legend of Zelda</h3>
                         <p>Aventura - Nintendo Switch</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Legend of Zelda', 'Una épica aventura en un mundo abierto lleno de secretos.', '59.99', 'Nintendo Switch')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Legend of Zelda', 'Una épica aventura en un mundo abierto lleno de secretos.', '262.000', 'Nintendo Switch')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('The Legend of Zelda', '262.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -471,7 +45,10 @@
                     <div class="card-content">
                         <h3>God of War Ragnarok</h3>
                         <p>Acción - PS5</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('God of War Ragnarok', 'Kratos y Atreus enfrentan el destino en un mundo nórdico en guerra.', '69.99', 'PS5')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('God of War Ragnarok', 'Kratos y Atreus enfrentan el destino en un mundo nórdico en guerra.', '80.000', 'PS5')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('God of War Ragnarok', '80.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -479,7 +56,10 @@
                     <div class="card-content">
                         <h3>Fc 25</h3>
                         <p>Deportes - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fc 25', 'El juego de fútbol más realista con nuevos modos y gráficos mejorados.', '49.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fc 25', 'El juego de fútbol más realista con nuevos modos y gráficos mejorados.', '60.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Fc 25', '60.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -487,7 +67,10 @@
                     <div class="card-content">
                         <h3>Forza Horizon 5</h3>
                         <p>Conducción - Xbox Series X</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Forza Horizon 5', 'Explora un mundo abierto en México con cientos de coches.', '59.99', 'Xbox Series X')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Forza Horizon 5', 'Explora un mundo abierto en México con cientos de coches.', '198.000', 'Xbox Series X')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Forza Horizon 5', '198.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -495,7 +78,10 @@
                     <div class="card-content">
                         <h3>Minecraft</h3>
                         <p>Aventura - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Minecraft', 'Construye y explora mundos infinitos en este juego de bloques.', '26.95', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Minecraft', 'Construye y explora mundos infinitos en este juego de bloques.', '130.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Minecraft', '130.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -503,7 +89,10 @@
                     <div class="card-content">
                         <h3>Fortnite</h3>
                         <p>Battle Royale - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fortnite', 'Sobrevive y construye en el popular juego de batalla real.', '0.00', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Fortnite', 'Sobrevive y construye en el popular juego de batalla real.', 'GRATIS', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Fortnite', 'GRATIS')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -511,7 +100,10 @@
                     <div class="card-content">
                         <h3>Call of Duty: Warzone</h3>
                         <p>Acción - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Call of Duty: Warzone', 'Forma equipo o vuela en solitario por entornos enormes; sé el último escuadrón en pie para ganar.', '0.00', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Call of Duty: Warzone', 'Forma equipo o vuela en solitario por entornos enormes; sé el último escuadrón en pie para ganar.', 'GRATIS', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Call of Duty: Warzone', 'GRATIS')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -519,7 +111,10 @@
                     <div class="card-content">
                         <h3>Assassin's Creed Valhalla</h3>
                         <p>Acción - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Assassin\'s Creed Valhalla', 'Vive la historia de un vikingo en este emocionante juego de acción y aventura.', '59.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Assassin\'s Creed Valhalla', 'Vive la historia de un vikingo en este emocionante juego de acción y aventura.', '200.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Assassin\'s Creed Valhalla', '200.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -527,7 +122,10 @@
                     <div class="card-content">
                         <h3>Sea of Thieves</h3>
                         <p>Multijugador - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Sea of Thieves', 'Únete a la aventura pirata en este juego multijugador en línea.', '0.00', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Sea of Thieves', 'Únete a la aventura pirata en este juego multijugador en línea.', '80.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Sea of Thieves', '80.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -535,15 +133,21 @@
                     <div class="card-content">
                         <h3>Valorant</h3>
                         <p>Acción - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Valorant', 'En este juego, los jugadores toman el control de agentes, personajes que representan diversas culturas y nacionalidades de todo el mundo.', '59.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Valorant', 'En este juego, los jugadores toman el control de agentes, personajes que representan diversas culturas y nacionalidades de todo el mundo.', 'GRATIS', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Valorant', 'GRATIS')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
                     <img src="/public/imagenes/Age-of-Empires-II-Definitive-Edition-imagen.webp" alt="Age of Empires II: Definitive Edition">
                     <div class="card-content">
-                        <h3>Age of Empires II: Definitive Edition</h3>
+                        <h3>Age of Empires II</h3>
                         <p>Estrategia - PC</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Age of Empires II: Definitive Edition', 'Revive la clásica saga de estrategia en tiempo real con gráficos mejorados y nuevas civilizaciones.', '29.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Age of Empires II: Definitive Edition', 'Revive la clásica saga de estrategia en tiempo real con gráficos mejorados y nuevas civilizaciones.', '28.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Age of Empires II: Definitive Edition', '28.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -551,7 +155,10 @@
                     <div class="card-content">
                         <h3>The Sims 4</h3>
                         <p>Simulación - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Sims 4', 'Crea y controla personas en un mundo virtual en este popular juego de simulación.', '39.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('The Sims 4', 'Crea y controla personas en un mundo virtual en este popular juego de simulación.', '15.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('The Sims 4', '15.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -559,7 +166,10 @@
                     <div class="card-content">
                         <h3>Super Mario Odyssey</h3>
                         <p>Plataformas - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Super Mario Odyssey', 'Acompaña a Mario en una aventura por diversos mundos para rescatar a la Princesa Peach.', '59.99', 'Consolas')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Super Mario Odyssey', 'Acompaña a Mario en una aventura por diversos mundos para rescatar a la Princesa Peach.', '200.000', 'Consolas')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Super Mario Odyssey', '200.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -567,7 +177,10 @@
                     <div class="card-content">
                         <h3>Starfield</h3>
                         <p>RPG - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Starfield', 'Explora el vasto universo en este esperado RPG de ciencia ficción.', '69.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Starfield', 'Explora el vasto universo en este esperado RPG de ciencia ficción.', '200.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Starfield', '200.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
                 <div class="card">
@@ -575,7 +188,10 @@
                     <div class="card-content">
                         <h3>Elden Ring</h3>
                         <p>RPG - PC - Consolas</p>
-                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Elden Ring', 'Adéntrate en un mundo de fantasía en este aclamado RPG de acción.', '69.99', 'PC')">Ver más</button>
+                        <button class="btn-ver-mas-juego" onclick="mostrarDetalles('Elden Ring', 'Adéntrate en un mundo de fantasía en este aclamado RPG de acción.', '200.000', 'PC')">Ver más</button>
+                        <div class="btn-agregar-carrito-container">
+                            <button class="btn-agregar-carrito" onclick="agregarAlCarrito('Elden Ring', '200.000')">Agregar al carrito</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -589,6 +205,23 @@
                 <p><strong>Consola:</strong> <span id="modalConsola"></span></p>
             </div>
         </div>
+
+        <!-- Modal del carrito de compras -->
+        <div id="cart-modal" class="modal">
+          <div class="modal-content">
+            <button class="close-btn" onclick="cerrarCarrito()">&times;</button>
+            <h2>Carrito de Compras</h2>
+            <div id="cart-items">
+              <!-- Los productos agregados aparecerán aquí -->
+            </div>
+            <div id="cart-total">
+              <p>Total: $<span id="total-amount">0.00</span></p>
+            </div>
+            <button class="btn-finalizar-compra" onclick="finalizarCompra()">Finalizar compra</button>
+          </div>
+        </div>
+        <div id="toast-container"></div>
+
     </main>
     <footer>
         <p>&copy; 2025 GameConnect. Todos los derechos reservados.</p>
@@ -643,5 +276,6 @@
             });
         });
     </script>
+    <script src="/src/js/carrito-games.js"></script>
 </body>
 </html>

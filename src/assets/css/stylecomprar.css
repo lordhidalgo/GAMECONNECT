@@ -134,3 +134,68 @@ h3 {
   cursor: not-allowed;
   transform: none;
 }
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .container {
+    max-width: 98vw;
+    padding: 1.2rem;
+  }
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .container {
+    max-width: 100vw;
+    padding: 0.5rem;
+    border-radius: 0;
+    min-width: 0;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding-bottom: 0.5rem;
+  }
+  .header h1 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+  .btn-volver {
+    font-size: 0.85rem;
+    padding: 7px 14px;
+  }
+  h1 {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .producto {
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 0.98em;
+    padding: 0.7rem;
+    gap: 4px;
+  }
+  #btn-pagar {
+    font-size: 1rem;
+    min-width: 120px;
+    padding: 10px 0;
+    margin-top: 1rem;
+  }
+}

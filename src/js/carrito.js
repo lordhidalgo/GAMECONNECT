@@ -13,63 +13,60 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Funcionalidad del Modal del Carrito ---
 
     // Mostrar el modal del carrito al hacer clic en el icono
-    if (cartIcon) { // Verificar si el icono existe en el DOM
+    if (cartIcon) {
         cartIcon.addEventListener('click', function() {
-            modal.style.display = 'block';
-            updateCart(); // Asegurarse de que el carrito esté actualizado al abrir
+            modal.classList.add('active'); // Cambiado para usar la clase 'active'
+            updateCart();
         });
     }
 
     // Cerrar el modal del carrito al hacer clic en el botón 'X'
     if (closeBtn) {
         closeBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
+            modal.classList.remove('active'); // Cambiado para usar la clase 'active'
         });
     }
 
     // Cerrar el modal si se hace clic fuera de él
     window.addEventListener('click', function(event) {
-        if (event.target === modal) { // Usar '===' para una comparación estricta
-            modal.style.display = 'none';
+        if (event.target === modal) {
+            modal.classList.remove('active'); // Cambiado para usar la clase 'active'
         }
     });
 
     // Cerrar con la tecla Escape
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && modal.style.display === 'block') {
-            modal.style.display = 'none';
+        if (event.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active'); // Cambiado para usar la clase 'active'
         }
     });
 
     // --- Delegación de Eventos para 'Agregar al Carrito' y 'Eliminar' ---
 
-    // Adjuntar un solo listener al cuerpo del documento
     document.body.addEventListener('click', function(event) {
         // Manejar clics en botones 'Agregar al carrito'
         if (event.target.classList.contains('btn-agregar-carrito')) {
-            const button = event.target; // El botón clicado
+            const button = event.target;
             const id = button.getAttribute('data-id');
             const nombre = button.getAttribute('data-nombre');
             const precio = parseFloat(button.getAttribute('data-precio'));
 
             // --- Lógica para manejar cantidades ---
-            const existingItemIndex = cart.findIndex(item => item.id === id); // Busca si el item ya está en el carrito
+            const existingItemIndex = cart.findIndex(item => item.id === id);
 
             if (existingItemIndex > -1) {
-                // Si el item ya existe, incrementa su cantidad
                 cart[existingItemIndex].quantity = (cart[existingItemIndex].quantity || 1) + 1;
                 cart[existingItemIndex].totalPrice = cart[existingItemIndex].quantity * cart[existingItemIndex].precio;
                 console.log(`Cantidad de "${nombre}" incrementada a ${cart[existingItemIndex].quantity}.`);
             } else {
-                // Si el item no existe, añádelo con cantidad 1 y totalPrice inicial
                 const item = { id, nombre, precio, quantity: 1, totalPrice: precio };
                 cart.push(item);
                 console.log("Elemento añadido al carrito:", item);
             }
             // --- Fin lógica para manejar cantidades ---
 
-            localStorage.setItem('cart', JSON.stringify(cart)); // Guardar en localStorage
-            updateCart(); // Actualizar la interfaz del carrito inmediatamente
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCart();
 
             // Mostrar el mensaje de confirmación amigable
             showToastNotification(`"${nombre}" añadido al carrito.`);
@@ -84,9 +81,9 @@ document.addEventListener('DOMContentLoaded', function() {
             cart = cart.filter(item => item.id !== idToRemove);
 
             if (cart.length < originalLength) {
-                localStorage.setItem('cart', JSON.stringify(cart)); // Actualizar localStorage
+                localStorage.setItem('cart', JSON.stringify(cart));
                 console.log(`Elemento "${itemToRemoveName}" eliminado del carrito.`);
-                updateCart(); // Actualizar la interfaz del carrito
+                updateCart();
                 showToastNotification(`"${itemToRemoveName}" eliminado del carrito.`);
             } else {
                 console.warn(`No se encontró el elemento con ID ${idToRemove} para eliminar.`);
@@ -97,9 +94,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- Funciones de Actualización y Lógica del Carrito ---
 
     function updateCart() {
-        cartItemsContainer.innerHTML = ''; // Limpiar el contenido actual del carrito
+        cartItemsContainer.innerHTML = '';
         let total = 0;
-        let totalItemsInCart = 0; // Para el contador del icono
+        let totalItemsInCart = 0;
 
         if (cart.length === 0) {
             cartItemsContainer.innerHTML = '<p class="empty-cart-message">El carrito está vacío.</p>';
@@ -116,20 +113,19 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 cartItemsContainer.appendChild(itemElement);
                 total += item.totalPrice;
-                totalItemsInCart += item.quantity; // Sumar la cantidad para el contador
+                totalItemsInCart += item.quantity;
             });
 
             const buyButton = document.createElement('button');
             buyButton.className = 'btn-comprar';
             buyButton.textContent = 'Comprar';
             buyButton.addEventListener('click', function() {
-                window.location.href = '/src/comprar.html'; // Redirigir a tu página de pago
+                window.location.href = '/src/comprar.html';
             });
             cartItemsContainer.appendChild(buyButton);
         }
 
         totalAmount.textContent = total.toLocaleString('es-CO', {minimumFractionDigits: 0, maximumFractionDigits: 2});
-        // Actualizar el contador del icono del carrito
         if (cartCountElement) {
             cartCountElement.textContent = totalItemsInCart;
         }
