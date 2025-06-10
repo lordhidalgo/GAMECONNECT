@@ -2,21 +2,21 @@
     {
         "id": "starfield",
         "titulo": "Lanzamiento de Starfield 🚀",
-        "imagen": "/imagenes/starfield.gif",
+        "imagen": "/images/starfield.gif",
         "descripcionCorta": "Explora el universo en uno de los juegos más esperados del año. Ya disponible en nuestra tienda.",
         "contenidoCompleto": "<p>¡La actualización de mayo de Starfield ya está disponible para todos los jugadores! Incluye varias mejoras prácticas y corrige diversos errores de misiones, vehículos, gráficos y más. Además, llegan con esta actualización ajustes de calidad reducida que mejoran el rendimiento en algunos dispositivos.</p>"
     },
     {
         "id": "zelda",
         "titulo": "Zelda: Tears of the Kingdom 🗡️",
-        "imagen": "/imagenes/zelda.gif",
+        "imagen": "/images/zelda.gif",
         "descripcionCorta": "La nueva aventura de Link llega con mecánicas nunca antes vistas. ¡Descúbrelo ahora!",
         "contenidoCompleto": "<p>Tears of the Kingdom, la esperada secuela de Breath of the Wild, lleva la exploración de Hyrule a nuevas alturas... literalmente. Link ahora puede viajar entre tierra y cielo, y sus nuevas habilidades como la Ultramano y Combinación abren un sinfín de posibilidades para la resolución de puzles y el combate.</p><p>Los jugadores se encontrarán con nuevos desafíos, personajes y secretos que desvelar en este vasto y hermoso mundo.</p>"
     },
     {
         "id": "gta6",
         "titulo": "GTA VI: Nuevos rumores 🔥",
-        "imagen": "/imagenes/gta6.gif",
+        "imagen": "/images/gta6.gif",
         "descripcionCorta": "Analizamos los últimos rumores y filtraciones sobre el próximo título de Rockstar Games.",
         "contenidoCompleto": "<p>La especulación sobre Grand Theft Auto VI está en su punto más alto. Recientes rumores, alimentados por supuestas filtraciones y análisis de Rockstar, sugieren que el juego podría estar ambientado en una versión moderna de Vice City.</p><p>Se habla de dos protagonistas, una historia más profunda y un mapa aún más grande que el de GTA V. Aunque Rockstar mantiene silencio, la comunidad no deja de buscar pistas sobre uno de los títulos más esperados de la década.</p>"
     }

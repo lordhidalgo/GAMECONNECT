@@ -1,15 +1,18 @@
 :root {
   --background-dark: #06141B;
-  --primary-color: #253745;
-  --button-success-color: #4A5C6A;
-  --text-light: #ffffff;
-  --text-dark: #333333;
-  --border-light: #dddddd;
+  --primary-color: #00BFFF;
+  --secondary-bg: #253745;
+  --main-box-bg: #CCD0CF;
+  --main-box-border: #00BFFF;
+  --main-box-shadow: 0 5px 15px rgba(255, 255, 255, 0.15);
+  --text-light: #CCD0CF;
+  --text-dark: #06141B;
+  --button-bg: #00BFFF;
+  --button-hover-bg: #253745;
+  --button-hover-text: #fff;
+  --border-light: #253745;
   --font-body: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   --spacing-base: 1rem;
-  --main-box-bg: #CCD0CF;
-  --main-box-border: #ccc;
-  --main-box-shadow: 0 5px 15px rgba(255, 255, 255, 0.668);
   --main-box-max-width: 700px;
 }
 
@@ -18,7 +21,7 @@ body {
   padding: 0;
   background-color: var(--background-dark);
   font-family: var(--font-body);
-  color: var(--text-dark);
+  color: var(--text-light);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,8 +31,8 @@ body {
 }
 
 .container {
-  background-color: var(--main-box-bg);
-  border: 1px solid var(--main-box-border);
+  background-color: var(--secondary-bg);
+  border: 2px solid var(--main-box-border);
   border-radius: 10px;
   box-shadow: var(--main-box-shadow);
   padding: calc(var(--spacing-base) * 2);
@@ -45,7 +48,7 @@ body {
   align-items: center;
   margin-bottom: calc(var(--spacing-base) * 1.5);
   padding-bottom: var(--spacing-base);
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--main-box-border);
 }
 
 .header h1 {
@@ -55,17 +58,20 @@ body {
 }
 
 .btn-volver {
-  background-color: #4A5C6A;
-  color: var(--text-light);
+  background-color: var(--button-bg);
+  color: var(--text-dark);
   padding: calc(var(--spacing-base) * 0.75) var(--spacing-base);
   border-radius: 5px;
   text-decoration: none;
   font-size: 0.9rem;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border: none;
+  font-weight: bold;
 }
 
 .btn-volver:hover {
-  background-color: #253745;
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
 }
 
 h1 {
@@ -81,13 +87,13 @@ h1 {
 }
 
 .producto {
-  background-color: var(--text-light);
-  border: 1px solid var(--border-light);
+  background-color: #06141B;
+  border: 1.5px solid var(--main-box-border);
   padding: var(--spacing-base);
   margin-bottom: var(--spacing-base);
   border-radius: 5px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
-  color: var(--text-dark);
+  box-shadow: 0 1px 3px rgba(0, 191, 255, 0.08);
+  color: var(--text-light);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -95,13 +101,14 @@ h1 {
 
 .producto strong {
   font-size: 1.1rem;
+  color: var(--primary-color);
 }
 
 h3 {
   font-size: 1.5rem;
   margin-top: calc(var(--spacing-base) * 1.5);
   margin-bottom: calc(var(--spacing-base) * 2);
-  color: var(--text-dark);
+  color: var(--primary-color);
 }
 
 #total-pedido {
@@ -111,26 +118,29 @@ h3 {
 
 #btn-pagar {
   padding: var(--spacing-base) calc(var(--spacing-base) * 2);
-  background-color: var(--button-success-color);
-  color: var(--text-light);
+  background-color: var(--button-bg);
+  color: var(--text-dark);
   border: none;
   font-size: 1.2rem;
   cursor: pointer;
   border-radius: 8px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   width: auto;
   min-width: 200px;
   margin-top: calc(var(--spacing-base) * 2);
   display: inline-block;
+  font-weight: bold;
 }
 
 #btn-pagar:hover {
-  background-color: #253745;
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
   transform: translateY(-2px);
 }
 
 #btn-pagar:disabled {
   background-color: #cccccc;
+  color: #888;
   cursor: not-allowed;
   transform: none;
 }

@@ -6,184 +6,207 @@
   <title>Sobre Nosotros | GameConnect</title>
   <link rel="icon" type="image/png" href="/public/images/logo-2078018_1280.png">
   <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #06141B;
-      color: #ffffff;
-    }
+  body {
+    margin: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #06141B;
+    color: #CCD0CF;
+  }
 
+  .container {
+    max-width: 1000px;
+    margin: 40px auto 0 auto;
+    padding: 60px 20px;
+    background: #253745;
+    border-radius: 16px;
+    box-shadow: 0 4px 25px rgba(0,191,255,0.08);
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto 40px;
+    width: 140px;
+  }
+
+  h1, h2 {
+    text-align: center;
+    color: #00BFFF;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+  }
+
+  .quote {
+    font-style: italic;
+    text-align: center;
+    font-size: 1.3rem;
+    color: white;
+    margin-bottom: 40px;
+  }
+
+  .content {
+    background-color: #CCD0CF;
+    color: #11212D;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 25px rgba(0,191,255,0.08);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 80px;
+  }
+
+  .content p {
+    margin-bottom: 20px;
+  }
+
+  .mission-vision {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+
+  .mission-vision img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,191,255,0.08);
+  }
+
+  .mission-vision-text {
+    flex: 1;
+    min-width: 300px;
+    color: #CCD0CF;
+  }
+
+  .mission-vision-img {
+    view-timeline-name: --image;
+    view-timeline-axis: block;
+    animation-timeline: --image;
+    animation-name: show;
+    animation-range: entry 25%  cover 30%;
+    animation-fill-mode: both;
+    flex: 1;
+    min-width: 300px;
+  }
+
+  footer {
+    background: black;
+    color: #CCD0CF;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 20px;
+   
+    font-size: 0.95rem;
+  }
+
+  @keyframes show {
+    from {
+      opacity: 0;
+      escale: 25%;
+    }
+    to {
+      opacity: 1;
+      escale: 100%;
+    }
+  }
+
+  /* --- RESPONSIVE DESIGN --- */
+  @media (max-width: 900px) {
     .container {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 60px 20px;
+      max-width: 98vw;
+      padding: 30px 5vw;
     }
-
-    .logo {
-      display: block;
-      margin: 0 auto 40px;
-      width: 140px;
-    }
-
-    h1, h2 {
-      text-align: center;
-      color: #ffffff;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-
-    .quote {
-      font-style: italic;
-      text-align: center;
-      font-size: 1.3rem;
-      color: #b0b0b0;
+    .mission-vision {
+      flex-direction: column;
+      gap: 24px;
       margin-bottom: 40px;
     }
-
-    .content {
-      background-color: #ffffff;
-      color: #111;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 4px 25px rgba(255, 255, 255, 0.1);
-      font-size: 1.1rem;
-      line-height: 1.8;
-      margin-bottom: 80px;
-    }
-
-    .content p {
-      margin-bottom: 20px;
-    }
-
-    .mission-vision {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 80px;
-    }
-
-    .mission-vision img {
-      width: 100%;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(255,255,255,0.1);
-    }
-
+    .mission-vision-img,
     .mission-vision-text {
-      flex: 1;
-      min-width: 300px;
+      min-width: 0;
+      width: 100%;
     }
-
-    .mission-vision-img {
-      view-timeline-name: --image;
-      view-timeline-axis: block;
-      animation-timeline: --image;
-      animation-name: show;
-      animation-range: entry 25%  cover 30%;
-      animation-fill-mode: both;
-      flex: 1;
-      min-width: 300px;
+    .content {
+      padding: 24px;
+      font-size: 1em;
     }
+  }
 
-
-    footer {
-      background-color: #0a1a24;
-      padding: 20px;
-      text-align: center;
-      color: #b0b0b0;
-      font-size: 0.9rem;
+  @media (max-width: 600px) {
+    .container {
+      max-width: 100vw;
+      padding: 16px 2vw;
     }
-
-    @keyframes show {
-      from {
-        opacity: 0;
-        escale: 25%;
-      }
-      to {
-        opacity: 1;
-        escale: 100%;
-      }
+    .logo {
+      width: 80px;
+      margin-bottom: 24px;
     }
-
-    /* --- RESPONSIVE DESIGN --- */
-    @media (max-width: 900px) {
-      .container {
-        max-width: 98vw;
-        padding: 30px 5vw;
-      }
-      .mission-vision {
-        flex-direction: column;
-        gap: 24px;
-        margin-bottom: 40px;
-      }
-      .mission-vision-img,
-      .mission-vision-text {
-        min-width: 0;
-        width: 100%;
-      }
-      .content {
-        padding: 24px;
-        font-size: 1em;
-      }
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
     }
-
-    @media (max-width: 600px) {
-      .container {
-        max-width: 100vw;
-        padding: 16px 2vw;
-      }
-      .logo {
-        width: 80px;
-        margin-bottom: 24px;
-      }
-      h1 {
-        font-size: 1.6rem;
-        margin-bottom: 12px;
-      }
-      h2 {
-        font-size: 1.1rem;
-        margin-bottom: 10px;
-      }
-      .quote {
-        font-size: 1em;
-        margin-bottom: 24px;
-      }
-      .content {
-        padding: 12px;
-        font-size: 0.98em;
-        margin-bottom: 32px;
-      }
-      .mission-vision {
-        flex-direction: column;
-        gap: 14px;
-        margin-bottom: 24px;
-      }
-      .mission-vision-img,
-      .mission-vision-text {
-        min-width: 0;
-        width: 100%;
-      }
-      .mission-vision-img img {
-        border-radius: 8px;
-        margin-bottom: 10px;
-      }
-      footer.container {
-        padding: 10px 2vw;
-        font-size: 0.85em;
-      }
+    h2 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
     }
+    .quote {
+      font-size: 1em;
+      margin-bottom: 24px;
+    }
+    .content {
+      padding: 12px;
+      font-size: 0.98em;
+      margin-bottom: 32px;
+    }
+    .mission-vision {
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+    .mission-vision-img,
+    .mission-vision-text {
+      min-width: 0;
+      width: 100%;
+    }
+    .mission-vision-img img {
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    footer.container {
+      padding: 10px 2vw;
+      font-size: 0.85em;
+    }
+  }
+
+  .btn-volver {
+  display: inline-block;
+  background: #00BFFF;
+  color: #06141B;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-bottom: 24px;
+  transition: background 0.3s;
+}
+.btn-volver:hover {
+  background: #1f618d;
+  color: white;
+}
   </style>
 </head>
 <body>
   <section class="container">
+    <a href="/index.html" class="btn-volver">Volver a la página principal</a>
     <img src="/images/logo-2078018_1280.png" alt="GameConnect Logo" class="logo"/>
     <h1>Somos GameConnect</h1>
     <p class="quote">"Jugamos, conectamos y creamos comunidad."</p>
@@ -218,8 +241,8 @@
       </div>
     </div>
   </section>
-    <footer class="container">
-        <p style="text-align: center; color: #b0b0b0;">&copy; 2025 GameConnect. Todos los derechos reservados.</p>
-
+    <footer class="footer">
+    &copy; 2025 GameConnect. Todos los derechos reservados.
+</footer>
 </body>
 </html>
