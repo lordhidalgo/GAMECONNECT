@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (btn) {
         btn.onclick = function() {
             if (modal) {
+                const data = JSON.parse(localStorage.getItem('perfilUsuario'));
+                if (data) {
+                    document.getElementById('nombreCompleto').value = data.nombreCompleto || '';
+                    document.getElementById('correo').value = data.correo || '';
+                    document.getElementById('telefono').value = data.telefono || '';
+                    document.getElementById('direccion').value = data.direccion || '';
+                    document.getElementById('metodosPago').value = data.metodosPago || '';
+                    document.getElementById('subscripcion').checked = !!data.subscripcion;
+                }
                 modal.style.display = 'block';
             } else {
                 console.error('No se encontró el modal.');
@@ -46,8 +55,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (perfilForm) {
         perfilForm.onsubmit = function(event) {
             event.preventDefault();
-
-            // Recolectar los datos del formulario
             var formData = {
                 nombreCompleto: document.getElementById('nombreCompleto').value,
                 correo: document.getElementById('correo').value,
@@ -56,17 +63,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 metodosPago: document.getElementById('metodosPago').value,
                 subscripcion: document.getElementById('subscripcion').checked
             };
-
-            // Mostrar los datos en la consola
-            console.log('Datos del formulario:', formData);
-
-            // Aquí puedes añadir la lógica para guardar los cambios
+            localStorage.setItem('perfilUsuario', JSON.stringify(formData));
             alert('Cambios guardados');
-            if (modal) {
-                modal.style.display = 'none';
-            } else {
-                console.error('No se encontró el modal.');
-            }
+            if (modal) modal.style.display = 'none';
         };
     } else {
         console.error('No se encontró el formulario de perfil.');
@@ -77,13 +76,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (eliminarCuentaBtn) {
         eliminarCuentaBtn.onclick = function() {
             if (confirm('¿Estás seguro de que deseas eliminar tu cuenta?')) {
-                // Aquí puedes añadir la lógica para eliminar la cuenta
+                localStorage.removeItem('perfilUsuario');
                 alert('Cuenta eliminada');
-                if (modal) {
-                    modal.style.display = 'none';
-                } else {
-                    console.error('No se encontró el modal.');
-                }
+                if (modal) modal.style.display = 'none';
             }
         };
     } else {
