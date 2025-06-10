@@ -28,7 +28,7 @@ window.openGameDetailModal = function(gameId) {
 
         gameDetailModal.style.display = 'flex';
     } else {
-        console.error('Juego con ID ' + gameId + ' no encontrado en los datos de data.json.');
+        console.error('Juego con ID ' + gameId + ' no encontrado en los datos de dataCatalog.json.');
         alert('Lo sentimos, no se encontró información detallada para este juego.');
     }
 };
@@ -37,10 +37,10 @@ document.addEventListener("DOMContentLoaded", async () => {
     const container = document.querySelector('.catalogo-grid');
     
     try {
-        const response = await fetch('/data.json');
+        const response = await fetch('/dataCatalog.json');
 
         if (!response.ok) {
-            throw new Error(`Error HTTP! Estado: ${response.status} - No se pudo cargar el archivo data.json.`);
+            throw new Error(`Error HTTP! Estado: ${response.status} - No se pudo cargar el archivo dataCatalog.json.`);
         }
 
         allGames = await response.json();

@@ -30,11 +30,11 @@ document.addEventListener("DOMContentLoaded", async () => {
     const newsContainer = document.querySelector('.news-container'); // Contenedor de las tarjetas de noticias
 
     try {
-        // Cargar las noticias desde el archivo local news.json
-        const response = await fetch('/public/news.json');
+        // Cargar las noticias desde el archivo local dataNewsletters.json
+        const response = await fetch('/public/dataNewsletters.json');
 
         if (!response.ok) {
-            throw new Error(`Error HTTP! Estado: ${response.status} - No se pudo cargar el archivo news.json.`);
+            throw new Error(`Error HTTP! Estado: ${response.status} - No se pudo cargar el archivo dataNewsletters.json.`);
         }
 
         allNews = await response.json(); // Almacena todas las noticias

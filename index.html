@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gameconnect</title>
-    <link rel="stylesheet" href="/src/assets/css/styleprincipal.css">
+    <link rel="stylesheet" href="/public/assets/css/stylePrincipal.css">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="/public/images/logo-2078018_1280.png">
 </head>
 <body>
     <!-- Header Section -->
-    <header>
-        <a href="#" class="logo" style="margin-left: 10px;">
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 0 32px;">
+        <a href="#" class="logo" style="margin-left: 0;">
             <img src="/images/logo-2078018_1280.png" alt="logo de la marca">
         </a>
-        <nav>
+        <nav style="flex: 1; display: flex; justify-content: center;">
             <a href=".slider" class="nav-link">INICIO</a>
             <a href="/src/sobrenosotros.html" class="nav-link">SOBRE NOSOTROS</a>
-            <a href="#featured-news">NOTICIAS</a>
+            <a href="#featured-news" class="nav-link">NOTICIAS</a>
 
             <div class="dropdown2">
                 <a class="nav-link dropdown-toggle2">INGRESAR COMO</a>
@@ -40,11 +40,6 @@
             <a href="#area-formulario" class="nav-link">SOPORTE</a>
         </nav>
         <div class="header-actions" style="display: flex; align-items: center; gap: 12px;">
-            <form id="search-form" class="search-form-container" style="display: flex;">
-                <input type="text" placeholder="Buscar juegos..." id="search-bar">
-                <button type="submit">Buscar</button>
-            </form>
-
             <button id="modal" style="background: none; border: none; cursor: pointer; position: relative;">
                 <img src="/images/shopping-cart-1105049_1280.png" alt="Carrito de compras" width="40" height="40">
                 <span id="cartCount">0</span>
@@ -365,7 +360,6 @@
     <div id="toast-container"></div>
 
     <!-- Scripts -->
-    <script src="/src/js/searchForm.js" defer></script>
     <script src="/src/js/slider.js" defer></script>
     <script src="/src/js/cart.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
