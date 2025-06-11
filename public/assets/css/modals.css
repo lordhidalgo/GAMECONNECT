@@ -1,0 +1,330 @@
+.modal {
+  position: fixed;
+  inset: 0; 
+  background: #06141B;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem; 
+  overflow-y: auto; 
+  color: #CCD0CF;
+}
+
+.modal-content {
+  background: #06141B;
+  padding: 2rem 2.5rem;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 100%;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(255, 255, 255, 0.329);
+  transform: translateY(-20px);
+  opacity: 0;
+  animation: modalFadeIn 0.3s forwards;
+  max-height: 80vh; 
+  overflow-y: auto; 
+}
+
+/* Animación suave de aparición */
+@keyframes modalFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #f0f0f0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close:hover {
+  color: #e74c3c;
+  transform: rotate(90deg);
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+  font-size: 1rem;
+  color: #CCD0CF;
+}
+
+.btn-eliminar {
+  background: #00BFFF;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background: #c0392b;
+}
+
+.btn-comprar {
+  background: #00BFFF;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 14px 0;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  transition: background-color 0.3s ease;
+}
+
+.btn-comprar:hover {
+  background: #1f618d;
+  color: white;
+}
+
+.modal-game-detail {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+    overflow-y: auto;
+    color: #CCD0CF;
+}
+
+.modal-content-detail {
+    background: #06141B;
+    padding: 2.5rem;
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    transform: translateY(-20px);
+    opacity: 0;
+    animation: modalFadeIn 0.3s forwards;
+    max-height: 90vh;
+    overflow-y: auto;
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    border-top: #00BFFF 3px solid;
+}
+
+@keyframes modalFadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-detail-modal {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #f0f0f0;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.close-detail-modal:hover {
+    color: #e74c3c;
+    transform: rotate(90deg);
+}
+
+.modal-body-game {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+    justify-content: center;
+}
+
+.modal-game-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.modal-game-info {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.modal-game-info h2 {
+    font-size: 2.2rem;
+    color: #00BFFF;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.modal-game-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #E0E0E0;
+    text-align: center;
+}
+
+.modal-game-price {
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #00BFFF;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.modal-description-box {
+    background-color: #1f618d;
+    padding: 1.2rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: justify;
+}
+
+.modal-description-box h3 {
+    font-size: 1.3rem;
+    color: #00BFFF;
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.modal-description-box p {
+    font-size: 1rem;
+    color: #D0D0D0;
+    line-height: 1.7;
+}
+
+#add-to-cart-modal-btn {
+    margin-top: 2rem;
+    padding: 14px 25px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    background-color: #00BFFF;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#add-to-cart-modal-btn:hover {
+    background-color: #1f618d;
+    transform: translateY(-2px);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .modal-content-detail {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+    .modal-game-image {
+        max-width: 80%;
+    }
+    .modal-game-info {
+        min-width: unset;
+    }
+    .modal-game-info h2 {
+        font-size: 1.8rem;
+    }
+    .modal-game-info p, .modal-description-box p {
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content-detail {
+        padding: 1rem;
+    }
+    .close-detail-modal {
+        font-size: 28px;
+        top: 10px;
+        right: 15px;
+    }
+    #add-to-cart-modal-btn {
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+}
+
+.modal-news-detail {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-news-detail .modal-content-news {
+    background-color: #06141B;
+    color: #CCD0CF;
+    margin: auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.3);
+    position: relative;
+    max-width: 800px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+    animation: fadeInModal 0.3s ease-out;
+    text-align: center; /* Centra el texto y los elementos hijos */
+    border-top: #00BFFF 3px solid;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los hijos horizontalmente */
+    justify-content: center; /* Centra los hijos verticalmente si hay espacio */
+}
+
+/* Ajusta el color del título y texto dentro del modal de noticia */
+#modal-news-title {
+    font-size: 2.4em;
+    color: #00BFFF;                      /* Azul igual que modal-game-detail */
+    margin-bottom: 20px;
+    line-height: 1.3;
+    text-align: center;
+}
+
+#modal-news-full-content {
+    font-size: 1.15em;
+    line-height: 1.8;
+    color: #CCD0CF;                      /* Texto claro */
+    margin-top: 20px;
+    padding-right: 15px;
+}

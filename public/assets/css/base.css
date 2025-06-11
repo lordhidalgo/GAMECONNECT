@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Estilos base para el cuerpo */
+body {
+    margin: 0;
+    padding: 0;
+    background: #06141B;
+    background-size: 800% 800%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding-top: 72px; /* Reducido para acercar el slider al header */
+}
+
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+/* Estilos para el encabezado */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    background-color: black;
+    height: 70px;
+    min-height: 70px;
+    max-height: 70px;
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.151);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    border-top: 3px solid #00BFFF;
+}
+
+.logo {
+    margin-left: 0 !important;
+}
+
+nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* Estilos para la navegación */
+nav {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 13px;
+    margin-left: 10px;
+    padding: 2px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 5%;
+    letter-spacing: 3px;
+    color: #f3f6f7;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+nav a:hover {
+    color: #00BFFF;
+}
+
+.logo, .icono-carrito {
+    cursor: pointer;
+    transition: transform 0.8s;
+}
+
+.logo:hover, .icono-carrito:hover {
+    transform: scale(1.2);
+}
+
+
+/* Estilos específicos para el ícono del carrito */
+.icono-carrito img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.2s ease;
+}
+
+.icono-carrito img:hover {
+    transform: scale(1.2);
+}
+
+/* Estilos para los menús desplegables */
+.dropdown2, .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-toggle2, .dropdown-toggle {
+    cursor: pointer;
+    font-weight: 600;
+    padding-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.Ingresar-como, .dropdown-menu {
+    display: none;
+    position: absolute;
+    background-color: #00BFFF;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.151);
+    z-index: 1000;
+}
+
+.dropdown2:hover .Ingresar-como, .dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.Ingresar-como a, .dropdown-menu a {
+    color: #1A2A33;
+    padding: 8px 12px;
+    display: block;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.Ingresar-como a:hover, .dropdown-menu a:hover {
+    background-color: white;
+}
+
+/* Estilos para la sección de inicio */
+#inicio {
+    margin-top: 0px;
+    text-align: center;
+    height: 600px;
+}
+
+#toast-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1050; /* Por encima de modales, pero debajo de algún elemento crítico */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    pointer-events: none; /* Permite clics a través del contenedor si no hay toasts */
+}
+
+.toast-notification {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    opacity: 0; /* Empieza invisible */
+    transform: translateY(20px); /* Empieza un poco abajo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    min-width: 250px;
+    max-width: 350px;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+    pointer-events: auto; /* Permite interacciones con el toast */
+}
+
+.toast-notification.show {
+    opacity: 1; /* Se hace visible */
+    transform: translateY(0); /* Sube a su posición */
+}
+
+.toast-notification .toast-icon {
+    margin-right: 10px;
+    font-size: 1.4em;
+    color: #4CAF50; /* Color verde para éxito */
+}
+
+#modal {
+    position: relative;
+}
+
+#cartCount {
+    position: absolute;
+    top: 0px;
+    right: -8px;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 0.85em;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 7px;
+    min-width: 20px;
+    text-align: center;
+    line-height: 1.2;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.18);
+    pointer-events: none;
+    z-index: 2;
+}

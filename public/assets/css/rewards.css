@@ -1,0 +1,82 @@
+#rewards-section {
+    padding: 2rem;
+    margin-top: 2rem;
+    background: #CCD0CF;
+    color: #fff;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow: hidden;
+    box-shadow: 0 12px 20px rgba(255, 255, 255, 0.151);
+    margin-left: 5px;
+    margin-right: 5px;
+    border-top: #00BFFF 3px solid;
+}
+
+#rewards-section h2 {
+    text-align: center;
+    color: #11212D;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 4px;
+    display: inline-block;
+    padding-bottom: 10px;
+    animation: fadeInUp 1.2s ease-out;
+}
+
+.ryp {
+    font-size: 32px;
+    text-align: center;
+    color: #ffa500;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.4s ease-out;
+}
+
+.contenedor-cubs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.reward-item {
+    background: #1f618d;
+    padding: 20px;
+    border-radius: 12px;
+    width: 280px;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    animation: fadeInUp 1s ease-out;
+    animation-delay: 0.2s;
+    animation-fill-mode: both;
+    border-top: #253745 3px solid;
+}
+
+.reward-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 20px rgba(49, 49, 51, 0.5);
+    background: #06141B;
+}
+
+.reward-item h3 {
+    margin: 0 0 10px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.reward-item:hover h3 {
+    color: #00BFFF;
+}
+
+.reward-item p {
+    margin: 0;
+    color: #06141B;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.reward-item:hover p {
+    color: white;
+}
