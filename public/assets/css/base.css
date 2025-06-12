@@ -146,43 +146,44 @@ nav a:hover {
     height: 600px;
 }
 
+/* Puedes poner esto en base.css o toast.css */
 #toast-container {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    z-index: 1050; /* Por encima de modales, pero debajo de algún elemento crítico */
+    z-index: 1050;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    pointer-events: none; /* Permite clics a través del contenedor si no hay toasts */
+    pointer-events: none;
 }
 
 .toast-notification {
-    background-color: #333; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
+    background-color: #333;
+    color: #fff;
     padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-    opacity: 0; /* Empieza invisible */
-    transform: translateY(20px); /* Empieza un poco abajo */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
     min-width: 250px;
     max-width: 350px;
     font-size: 1.1em;
     display: flex;
     align-items: center;
-    pointer-events: auto; /* Permite interacciones con el toast */
+    pointer-events: auto;
 }
 
 .toast-notification.show {
-    opacity: 1; /* Se hace visible */
-    transform: translateY(0); /* Sube a su posición */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .toast-notification .toast-icon {
     margin-right: 10px;
     font-size: 1.4em;
-    color: #4CAF50; /* Color verde para éxito */
+    color: #4CAF50;
 }
 
 #modal {

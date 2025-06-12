@@ -131,7 +131,7 @@ function showToastNotification(message, duration = 3000) {
     }
     const toast = document.createElement('div');
     toast.className = 'toast-notification';
-    toast.textContent = message;
+    toast.innerHTML = `<span class="toast-icon">&#10003;</span> ${message}`;
     toastContainer.appendChild(toast);
 
     setTimeout(() => {
