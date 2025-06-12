@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     try {
         // --- CAMBIO CLAVE AQUÍ: RUTA ABSOLUTA DESDE LA RAÍZ DEL SERVIDOR ---
-        const response = await fetch('/dataRewards.json'); // ¡Ruta corregida!
+        const response = await fetch('/public/dataRewards.json'); // ¡Ruta corregida!
 
         // --- MANEJO DE ERRORES MEJORADO: Verificar si la respuesta HTTP es exitosa ---
         if (!response.ok) { 
