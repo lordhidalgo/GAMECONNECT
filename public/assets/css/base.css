@@ -201,3 +201,34 @@ nav a:hover {
     pointer-events: none;
     z-index: 2;
 }
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        padding: 8px 4vw;
+    }
+    .logo {
+        margin-left: 0 !important;
+        margin-right: 8px;
+    }
+    nav {
+        flex: 1;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        margin: 0;
+        width: auto;
+    }
+    .header-actions {
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        margin: 0;
+    }
+}
