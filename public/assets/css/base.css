@@ -26,6 +26,7 @@ header {
     width: 100%; 
     border-top: 3px solid #00BFFF;
     z-index: 1001;
+    height: 70px;
 }
 
 .logo {
