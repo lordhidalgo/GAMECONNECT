@@ -8,7 +8,7 @@
   --text-light: #CCD0CF;
   --text-dark: #06141B;
   --button-bg: #00BFFF;
-  --button-hover-bg: #253745;
+  --button-hover-bg: #0080FF;
   --button-hover-text: #fff;
   --border-light: #253745;
   --font-body: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -70,7 +70,7 @@ body {
 }
 
 .btn-volver:hover {
-  background-color: var(--button-hover-bg);
+  background-color: #0066cc; /* Más oscuro que #0080FF */
   color: var(--button-hover-text);
 }
 
@@ -133,7 +133,7 @@ h3 {
 }
 
 #btn-pagar:hover {
-  background-color: var(--button-hover-bg);
+  background-color: #0066cc; /* Más oscuro que #0080FF */
   color: var(--button-hover-text);
   transform: translateY(-2px);
 }
